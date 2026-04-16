@@ -92,19 +92,17 @@
     .nav-logo {
       display: flex; align-items: center; gap: 12px;
     }
-    /* Logo PNG — sustituye el src con tu archivo real */
     .nav-logo-img {
       height: 46px;
       width: auto;
       object-fit: contain;
       display: block;
     }
-    /* Fallback circular si no hay imagen */
     .nav-logo-fallback {
       width: 46px; height: 46px; border-radius: 50%;
       background: var(--mid-blue);
       border: 2px solid var(--electric);
-      display: none; /* mostrar si falla la imagen */
+      display: none;
       align-items: center; justify-content: center;
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px; color: var(--gold); font-weight: 700;
@@ -231,7 +229,6 @@
       background: rgba(37,99,235,0.1);
     }
 
-    /* Hero visual — corregido el alineamiento vertical */
     .hero-visual {
       position: absolute;
       right: 6%;
@@ -242,7 +239,6 @@
       gap: 12px;
       width: 400px;
       animation: fadeInRight 1s .3s ease both;
-      /* evitamos que se pegue al stats-bar */
       max-height: calc(100vh - 200px);
       overflow: hidden;
     }
@@ -330,7 +326,6 @@
       gap: 20px;
     }
 
-    /* Tarjeta de servicio con imagen */
     .service-card {
       background: var(--navy);
       border: 1px solid var(--border);
@@ -356,7 +351,6 @@
     }
     .service-card:hover::before { transform: scaleX(1); }
 
-    /* Contenedor de imagen — ratio fijo 4:3, sin deformación */
     .service-img-wrap {
       width: 100%;
       aspect-ratio: 4 / 3;
@@ -367,7 +361,7 @@
     .service-img-wrap img {
       width: 100%;
       height: 100%;
-      object-fit: cover;       /* recorta sin deformar */
+      object-fit: cover;
       object-position: center;
       display: block;
       transition: transform .5s ease;
@@ -375,7 +369,6 @@
     .service-card:hover .service-img-wrap img {
       transform: scale(1.06);
     }
-    /* Placeholder cuando no hay imagen */
     .service-img-placeholder {
       width: 100%; height: 100%;
       display: flex; flex-direction: column;
@@ -386,7 +379,6 @@
     .service-img-placeholder i { font-size: 32px; color: var(--electric); }
     .service-img-placeholder span { font-size: 12px; letter-spacing: 1px; }
 
-    /* Número decorativo */
     .service-num {
       position: absolute; top: 12px; right: 14px;
       font-family: 'Cormorant Garamond', serif;
@@ -395,7 +387,6 @@
       z-index: 1; pointer-events: none;
     }
 
-    /* Info debajo de la imagen */
     .service-body {
       padding: 20px 22px 24px;
     }
@@ -518,6 +509,14 @@
     }
     .gallery-item:hover { transform: scale(1.02); z-index: 2; }
     .gallery-item.tall { grid-row: span 2; }
+
+    /* Imagen real en galería instalaciones */
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+
     .gallery-placeholder {
       width: 100%; height: 100%;
       display: flex; flex-direction: column;
@@ -549,6 +548,14 @@
       transition: all .3s;
     }
     .patient-card:hover { border-color: var(--electric); box-shadow: 0 8px 32px rgba(37,99,235,0.2); }
+
+    /* Imagen real en tarjeta de paciente */
+    .patient-card img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+
     .patient-placeholder {
       width: 100%; height: 100%;
       display: flex; flex-direction: column;
@@ -754,10 +761,6 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <!--
-      LOGO: Reemplaza "logo.png" con la ruta real de tu imagen.
-      Si la imagen falla, se muestra el fallback circular.
-    -->
     <img
       class="nav-logo-img"
       src="img/1.png"
@@ -807,7 +810,6 @@
     </div>
   </div>
 
-  <!-- Tarjetas flotantes — ahora con transform correcto y sin solaparse con el stats-bar -->
   <div class="hero-visual" aria-hidden="true">
     <div class="hero-card featured">
       <div class="hero-card-icon"><i class="fas fa-spa"></i></div>
@@ -852,17 +854,6 @@
   </div>
   <div class="services-grid">
 
-    <!--
-      INSTRUCCIONES DE USO:
-      Cada tarjeta tiene:
-        data-title       = título del modal
-        data-desc        = descripción larga del modal
-        data-img         = ruta de la imagen (cualquier tamaño, se adapta automáticamente)
-
-      La imagen del src también se usa en la tarjeta (aspect-ratio 4:3, object-fit:cover).
-      Si no tienes imagen aún, elimina el <img> y descomenta el placeholder.
-    -->
-
     <!-- 01 -->
     <article class="service-card reveal"
       data-title="Micropigmentación Capilar"
@@ -871,7 +862,6 @@
       onclick="openModal(this)">
       <div class="service-num">01</div>
       <div class="service-img-wrap">
-        <!-- Reemplaza src con tu imagen real -->
         <img src="img/micropigmentacion_capilar.webp" alt="Micropigmentación Capilar para hombres en Belanova For Men"
           onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user\'></i><span>Micropigmentación Capilar</span></div>'"/>
       </div>
@@ -1066,6 +1056,13 @@
 </div>
 
 <!-- GALERÍA INSTALACIONES -->
+<!--
+  INSTRUCCIONES — Sección "Un espacio Diseñado para Ti":
+  Cada .gallery-item tiene un <img> con src="img/TU_IMAGEN.jpg".
+  Reemplaza ese src con la ruta real de tu foto.
+  Si la imagen falla, se muestra automáticamente el placeholder de ícono.
+  El item con clase "tall" ocupa 2 filas (imagen vertical/portrait).
+-->
 <section id="galeria">
   <div class="section-header reveal">
     <div class="section-tag">Nuestras Instalaciones</div>
@@ -1074,30 +1071,73 @@
     <p class="section-desc">Ambientes modernos, limpios y pensados para que disfrutes de una experiencia premium en cada visita.</p>
   </div>
   <div class="gallery-grid reveal">
+
+    <!-- Imagen 1 — columna izquierda, altura doble (tall) -->
     <div class="gallery-item tall">
-      <div class="gallery-placeholder"><i class="fas fa-couch"></i><span>Sala de Tratamientos</span><small>Ambiente Premium</small></div>
+      <img
+        src="img/instalacion_1.jpg"
+        alt="Sala de Tratamientos — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="gallery-placeholder" style="display:none;"><i class="fas fa-couch"></i><span>Sala de Tratamientos</span><small>Ambiente Premium</small></div>
       <div class="gallery-overlay"><span>Sala Principal</span></div>
     </div>
+
+    <!-- Imagen 2 -->
     <div class="gallery-item">
-      <div class="gallery-placeholder"><i class="fas fa-microscope"></i><span>Equipos Tecnológicos</span></div>
+      <img
+        src="img/instalacion_2.jpg"
+        alt="Equipos Tecnológicos — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="gallery-placeholder" style="display:none;"><i class="fas fa-microscope"></i><span>Equipos Tecnológicos</span></div>
       <div class="gallery-overlay"><span>Tecnología de Punta</span></div>
     </div>
+
+    <!-- Imagen 3 -->
     <div class="gallery-item">
-      <div class="gallery-placeholder"><i class="fas fa-spa"></i><span>Zona de Relajación</span></div>
+      <img
+        src="img/instalacion_3.jpg"
+        alt="Zona de Relajación — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="gallery-placeholder" style="display:none;"><i class="fas fa-spa"></i><span>Zona de Relajación</span></div>
       <div class="gallery-overlay"><span>Zona Relax</span></div>
     </div>
+
+    <!-- Imagen 4 -->
     <div class="gallery-item">
-      <div class="gallery-placeholder"><i class="fas fa-door-open"></i><span>Recepción</span></div>
+      <img
+        src="img/instalacion_4.jpg"
+        alt="Recepción — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="gallery-placeholder" style="display:none;"><i class="fas fa-door-open"></i><span>Recepción</span></div>
       <div class="gallery-overlay"><span>Recepción</span></div>
     </div>
+
+    <!-- Imagen 5 -->
     <div class="gallery-item">
-      <div class="gallery-placeholder"><i class="fas fa-flask"></i><span>Productos Premium</span></div>
+      <img
+        src="img/instalacion_5.jpg"
+        alt="Productos Premium — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="gallery-placeholder" style="display:none;"><i class="fas fa-flask"></i><span>Productos Premium</span></div>
       <div class="gallery-overlay"><span>Productos de Calidad</span></div>
     </div>
+
   </div>
 </section>
 
 <!-- GALERÍA PACIENTES -->
+<!--
+  INSTRUCCIONES — Sección "Resultados Reales":
+  Cada .patient-card tiene un <img> con src="img/TU_IMAGEN.jpg".
+  Reemplaza ese src con la ruta real de tu foto de antes/después.
+  Si la imagen falla, se muestra automáticamente el placeholder de ícono.
+  El .patient-badge encima de la imagen permanece visible siempre.
+-->
 <section id="pacientes">
   <div class="section-header reveal">
     <div class="section-tag">Casos de Éxito</div>
@@ -1106,12 +1146,73 @@
     <p class="section-desc">Testimonios visuales de nuestros pacientes satisfechos. Resultados visibles desde la primera sesión.</p>
   </div>
   <div class="patients-grid">
-    <div class="patient-card reveal"><div class="patient-placeholder"><i class="fas fa-user"></i><span>Antes / Después</span><small>Tratamiento Facial</small></div><div class="patient-badge">Antes / Después</div></div>
-    <div class="patient-card reveal"><div class="patient-placeholder"><i class="fas fa-user"></i><span>Antes / Después</span><small>Control de Acné</small></div><div class="patient-badge">Acné</div></div>
-    <div class="patient-card reveal"><div class="patient-placeholder"><i class="fas fa-user"></i><span>Antes / Después</span><small>Hidratación</small></div><div class="patient-badge">Hidratación</div></div>
-    <div class="patient-card reveal"><div class="patient-placeholder"><i class="fas fa-user"></i><span>Antes / Después</span><small>Rejuvenecimiento</small></div><div class="patient-badge">Rejuvenecimiento</div></div>
-    <div class="patient-card reveal"><div class="patient-placeholder"><i class="fas fa-user"></i><span>Antes / Después</span><small>Ojeras</small></div><div class="patient-badge">Ojeras</div></div>
-    <div class="patient-card reveal"><div class="patient-placeholder"><i class="fas fa-user"></i><span>Antes / Después</span><small>Radiofrecuencia</small></div><div class="patient-badge">Radiofrecuencia</div></div>
+
+    <!-- Paciente 1 -->
+    <div class="patient-card reveal">
+      <img
+        src="img/resultado_1.jpg"
+        alt="Antes y después Tratamiento Facial — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Tratamiento Facial</small></div>
+      <div class="patient-badge">Antes / Después</div>
+    </div>
+
+    <!-- Paciente 2 -->
+    <div class="patient-card reveal">
+      <img
+        src="img/resultado_2.jpg"
+        alt="Antes y después Control de Acné — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Control de Acné</small></div>
+      <div class="patient-badge">Acné</div>
+    </div>
+
+    <!-- Paciente 3 -->
+    <div class="patient-card reveal">
+      <img
+        src="img/resultado_3.jpg"
+        alt="Antes y después Hidratación — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Hidratación</small></div>
+      <div class="patient-badge">Hidratación</div>
+    </div>
+
+    <!-- Paciente 4 -->
+    <div class="patient-card reveal">
+      <img
+        src="img/resultado_4.jpg"
+        alt="Antes y después Rejuvenecimiento — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Rejuvenecimiento</small></div>
+      <div class="patient-badge">Rejuvenecimiento</div>
+    </div>
+
+    <!-- Paciente 5 -->
+    <div class="patient-card reveal">
+      <img
+        src="img/resultado_5.jpg"
+        alt="Antes y después Ojeras — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Ojeras</small></div>
+      <div class="patient-badge">Ojeras</div>
+    </div>
+
+    <!-- Paciente 6 -->
+    <div class="patient-card reveal">
+      <img
+        src="img/resultado_6.jpg"
+        alt="Antes y después Radiofrecuencia — Belanova For Men"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Radiofrecuencia</small></div>
+      <div class="patient-badge">Radiofrecuencia</div>
+    </div>
+
   </div>
 </section>
 
