@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- ===== SEO ===== -->
   <title>Belanova For Men | Centro de Estética Integral para Hombres en Piura, Perú</title>
   <meta name="description" content="Belanova For Men es el centro de estética premium en Piura, Perú, diseñado exclusivamente para el hombre moderno. Tratamientos faciales, radiofrecuencia, control de acné, hidratación profunda y más."/>
   <meta name="keywords" content="estética para hombres, centro de belleza masculina, tratamientos faciales hombre, Piura, Perú, limpieza facial, radiofrecuencia, acné hombre, Belanova For Men"/>
@@ -12,21 +10,15 @@
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://belanovaformen.com/"/>
   <link rel="icon" type="image/png" href="img/1.png">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Belanova For Men | Estética Premium para Hombres"/>
   <meta property="og:description" content="Centro de estética integral para el hombre moderno en Piura, Perú. Tratamientos faciales, radiofrecuencia, control de acné y mucho más."/>
   <meta property="og:url" content="https://belanovaformen.com/"/>
   <meta property="og:site_name" content="Belanova For Men"/>
   <meta property="og:locale" content="es_PE"/>
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Belanova For Men | Estética Premium para Hombres"/>
   <meta name="twitter:description" content="Centro de estética integral para el hombre moderno en Piura, Perú."/>
-
-  <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,15 +34,12 @@
     },
     "openingHours": ["Mo-Sa 09:00-19:00"],
     "priceRange": "$$",
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61580926012403"
-    ]
+    "sameAs": ["https://www.facebook.com/profile.php?id=61580926012403"]
   }
   </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     :root {
       --navy:       #05090f;
@@ -65,21 +54,12 @@
       --text-muted: #7a94c1;
       --border:     rgba(37, 99, 235, 0.18);
     }
-
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Rajdhani', sans-serif;
-      background: var(--navy);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-
+    body { font-family: 'Rajdhani', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--deep-blue); }
     ::-webkit-scrollbar-thumb { background: var(--electric); border-radius: 10px; }
-
-    /* ===== NAV ===== */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
@@ -89,637 +69,186 @@
       border-bottom: 1px solid var(--border);
       transition: all .3s;
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 12px;
-    }
-    .nav-logo-img {
-      height: 46px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+    .nav-logo-img { height: 46px; width: auto; object-fit: contain; display: block; }
     .nav-logo-fallback {
       width: 46px; height: 46px; border-radius: 50%;
-      background: var(--mid-blue);
-      border: 2px solid var(--electric);
-      display: none;
-      align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; color: var(--gold); font-weight: 700;
+      background: var(--mid-blue); border: 2px solid var(--electric);
+      display: none; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); font-weight: 700;
     }
     .nav-brand { line-height: 1.1; }
-    .nav-brand span:first-child {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; font-weight: 700;
-      letter-spacing: 2px; color: var(--white);
-    }
-    .nav-brand span:last-child {
-      font-size: 11px; letter-spacing: 4px;
-      color: var(--gold); text-transform: uppercase;
-    }
+    .nav-brand span:first-child { display: block; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 700; letter-spacing: 2px; color: var(--white); }
+    .nav-brand span:last-child { font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; }
     .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      text-decoration: none; color: var(--text-muted);
-      font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-      font-weight: 500; transition: color .3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content:''; position: absolute; bottom:-4px; left:0; right:0;
-      height: 1px; background: var(--electric);
-      transform: scaleX(0); transition: transform .3s;
-    }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500; transition: color .3s; position: relative; }
+    .nav-links a::after { content:''; position: absolute; bottom:-4px; left:0; right:0; height: 1px; background: var(--electric); transform: scaleX(0); transition: transform .3s; }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-cta {
-      background: var(--electric);
-      color: #fff; border: none; cursor: pointer;
-      padding: 10px 22px; font-family: 'Rajdhani', sans-serif;
-      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-      font-weight: 600; border-radius: 2px;
-      transition: background .3s, box-shadow .3s;
-    }
+    .nav-cta { background: var(--electric); color: #fff; border: none; cursor: pointer; padding: 10px 22px; font-family: 'Rajdhani', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; border-radius: 2px; transition: background .3s, box-shadow .3s; }
     .nav-cta:hover { background: var(--glow); box-shadow: 0 0 20px rgba(37,99,235,0.5); }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
     .hamburger span { width:24px; height:2px; background:var(--white); border-radius:2px; transition:.3s; }
-
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 120px 6% 90px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(13,34,68,0.9) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(37,99,235,0.12) 0%, transparent 60%),
-        linear-gradient(135deg, #05090f 0%, #0a1628 50%, #0d2244 100%);
-    }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 580px;
-    }
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: rgba(37,99,235,0.1);
-      border: 1px solid var(--border);
-      padding: 7px 18px; border-radius: 2px;
-      font-size: 11px; letter-spacing: 3px; color: var(--electric);
-      text-transform: uppercase; margin-bottom: 28px;
-      animation: fadeInUp .8s ease both;
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 6% 90px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(13,34,68,0.9) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 20% 80%, rgba(37,99,235,0.12) 0%, transparent 60%), linear-gradient(135deg, #05090f 0%, #0a1628 50%, #0d2244 100%); }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+    .hero-content { position: relative; z-index: 2; max-width: 580px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 10px; background: rgba(37,99,235,0.1); border: 1px solid var(--border); padding: 7px 18px; border-radius: 2px; font-size: 11px; letter-spacing: 3px; color: var(--electric); text-transform: uppercase; margin-bottom: 28px; animation: fadeInUp .8s ease both; }
     .hero-tag i { font-size: 10px; }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(46px, 7vw, 82px);
-      font-weight: 300; line-height: 1;
-      color: var(--white);
-      margin-bottom: 8px;
-      animation: fadeInUp .8s .15s ease both;
-    }
-    .hero h1 strong {
-      display: block; font-weight: 700;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero-sub {
-      font-size: 17px; color: var(--text-muted);
-      line-height: 1.7; margin: 24px 0 40px;
-      font-weight: 300; letter-spacing: .5px;
-      animation: fadeInUp .8s .3s ease both;
-    }
-    .hero-btns {
-      display: flex; gap: 16px; flex-wrap: wrap;
-      animation: fadeInUp .8s .45s ease both;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--electric); color: #fff;
-      padding: 15px 32px; text-decoration: none;
-      font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-      font-weight: 600; border-radius: 2px;
-      transition: all .3s;
-      box-shadow: 0 4px 24px rgba(37,99,235,0.35);
-    }
-    .btn-primary:hover {
-      background: var(--glow);
-      box-shadow: 0 4px 32px rgba(37,99,235,0.55);
-      transform: translateY(-2px);
-    }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 10px;
-      border: 1px solid var(--border); color: var(--text-muted);
-      padding: 15px 32px; text-decoration: none;
-      font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
-      font-weight: 600; border-radius: 2px; transition: all .3s;
-    }
-    .btn-outline:hover {
-      border-color: var(--electric); color: var(--white);
-      background: rgba(37,99,235,0.1);
-    }
-
-    .hero-visual {
-      position: absolute;
-      right: 6%;
-      top: 50%;
-      transform: translateY(-50%);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      width: 400px;
-      animation: fadeInRight 1s .3s ease both;
-      max-height: calc(100vh - 200px);
-      overflow: hidden;
-    }
-    .hero-card {
-      background: var(--mid-blue);
-      border: 1px solid var(--border);
-      border-radius: 4px; padding: 20px;
-      display: flex; flex-direction: column; gap: 8px;
-      transition: transform .3s, box-shadow .3s;
-    }
-    .hero-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(37,99,235,0.2);
-    }
-    .hero-card-icon {
-      width: 40px; height: 40px; border-radius: 2px;
-      background: rgba(37,99,235,0.15);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 17px; color: var(--electric);
-    }
-    .hero-card h4 {
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 1px; color: var(--white);
-    }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(46px, 7vw, 82px); font-weight: 300; line-height: 1; color: var(--white); margin-bottom: 8px; animation: fadeInUp .8s .15s ease both; }
+    .hero h1 strong { display: block; font-weight: 700; background: linear-gradient(135deg, var(--gold), var(--gold-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 17px; color: var(--text-muted); line-height: 1.7; margin: 24px 0 40px; font-weight: 300; letter-spacing: .5px; animation: fadeInUp .8s .3s ease both; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp .8s .45s ease both; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--electric); color: #fff; padding: 15px 32px; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; border-radius: 2px; transition: all .3s; box-shadow: 0 4px 24px rgba(37,99,235,0.35); }
+    .btn-primary:hover { background: var(--glow); box-shadow: 0 4px 32px rgba(37,99,235,0.55); transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border); color: var(--text-muted); padding: 15px 32px; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; border-radius: 2px; transition: all .3s; }
+    .btn-outline:hover { border-color: var(--electric); color: var(--white); background: rgba(37,99,235,0.1); }
+    .hero-visual { position: absolute; right: 6%; top: 50%; transform: translateY(-50%); display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 400px; animation: fadeInRight 1s .3s ease both; max-height: calc(100vh - 200px); overflow: hidden; }
+    .hero-card { background: var(--mid-blue); border: 1px solid var(--border); border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 8px; transition: transform .3s, box-shadow .3s; }
+    .hero-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(37,99,235,0.2); }
+    .hero-card-icon { width: 40px; height: 40px; border-radius: 2px; background: rgba(37,99,235,0.15); display: flex; align-items: center; justify-content: center; font-size: 17px; color: var(--electric); }
+    .hero-card h4 { font-size: 13px; font-weight: 600; letter-spacing: 1px; color: var(--white); }
     .hero-card p { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
-    .hero-card.featured {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(13,34,68,0.8));
-      border-color: rgba(37,99,235,0.3);
-    }
-
-    /* Stats bar */
-    .stats-bar {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      display: flex;
-      background: rgba(10,22,40,0.85);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid var(--border);
-    }
-    .stat-item {
-      flex: 1; padding: 20px;
-      display: flex; align-items: center; gap: 16px;
-      border-right: 1px solid var(--border);
-      transition: background .3s;
-    }
+    .hero-card.featured { grid-column: 1 / -1; background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(13,34,68,0.8)); border-color: rgba(37,99,235,0.3); }
+    .stats-bar { position: absolute; bottom: 0; left: 0; right: 0; display: flex; background: rgba(10,22,40,0.85); backdrop-filter: blur(10px); border-top: 1px solid var(--border); }
+    .stat-item { flex: 1; padding: 20px; display: flex; align-items: center; gap: 16px; border-right: 1px solid var(--border); transition: background .3s; }
     .stat-item:last-child { border-right: none; }
     .stat-item:hover { background: rgba(37,99,235,0.06); }
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1;
-    }
+    .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1; }
     .stat-label { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
-
-    /* ===== SECTIONS COMMON ===== */
     section { padding: 100px 6%; }
-    .section-tag {
-      display: inline-block;
-      font-size: 11px; letter-spacing: 4px; color: var(--electric);
-      text-transform: uppercase; margin-bottom: 16px;
-    }
+    .section-tag { display: inline-block; font-size: 11px; letter-spacing: 4px; color: var(--electric); text-transform: uppercase; margin-bottom: 16px; }
     .section-tag::before { content: '— '; color: var(--gold); }
-    h2.section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 5vw, 52px);
-      font-weight: 300; color: var(--white);
-      line-height: 1.1; margin-bottom: 20px;
-    }
+    h2.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
     h2.section-title strong { font-weight: 700; color: var(--gold); }
-    .section-desc {
-      font-size: 16px; color: var(--text-muted);
-      line-height: 1.8; max-width: 560px; font-weight: 300;
-    }
+    .section-desc { font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 560px; font-weight: 300; }
     .section-header { margin-bottom: 60px; }
-    .divider {
-      width: 60px; height: 2px;
-      background: linear-gradient(90deg, var(--electric), transparent);
-      margin: 20px 0;
-    }
-
-    /* ===== SERVICIOS CON IMAGEN ===== */
+    .divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--electric), transparent); margin: 20px 0; }
     #servicios { background: var(--deep-blue); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-    }
-
-    .service-card {
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-      transition: all .4s;
-      cursor: pointer;
-    }
-    .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--electric), var(--glow));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .4s;
-      z-index: 2;
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(37,99,235,0.22);
-      border-color: rgba(37,99,235,0.35);
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .service-card { background: var(--navy); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; position: relative; transition: all .4s; cursor: pointer; }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--electric), var(--glow)); transform: scaleX(0); transform-origin: left; transition: transform .4s; z-index: 2; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(37,99,235,0.22); border-color: rgba(37,99,235,0.35); }
     .service-card:hover::before { transform: scaleX(1); }
-
-    .service-img-wrap {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: var(--mid-blue);
-      position: relative;
-    }
-    .service-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform .5s ease;
-    }
-    .service-card:hover .service-img-wrap img {
-      transform: scale(1.06);
-    }
-    .service-img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 10px;
-      background: linear-gradient(135deg, var(--mid-blue), var(--accent));
-      color: var(--text-muted);
-    }
+    .service-img-wrap { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: var(--mid-blue); position: relative; }
+    .service-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; transition: transform .5s ease; }
+    .service-card:hover .service-img-wrap img { transform: scale(1.06); }
+    .service-img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, var(--mid-blue), var(--accent)); color: var(--text-muted); }
     .service-img-placeholder i { font-size: 32px; color: var(--electric); }
     .service-img-placeholder span { font-size: 12px; letter-spacing: 1px; }
-
-    .service-num {
-      position: absolute; top: 12px; right: 14px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 36px; font-weight: 700;
-      color: rgba(255,255,255,0.18); line-height: 1;
-      z-index: 1; pointer-events: none;
-    }
-
-    .service-body {
-      padding: 20px 22px 24px;
-    }
-    .service-body h3 {
-      font-size: 17px; font-weight: 600;
-      letter-spacing: 1px; color: var(--white);
-      margin-bottom: 8px;
-    }
-    .service-body p {
-      font-size: 13px; color: var(--text-muted); line-height: 1.7;
-    }
-    .service-more {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 12px;
-      font-size: 11px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--electric);
-      font-weight: 600;
-    }
-
-    /* ===== MODAL ===== */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 9000;
-      background: rgba(5,9,15,0.92);
-      backdrop-filter: blur(10px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .3s;
-    }
+    .service-num { position: absolute; top: 12px; right: 14px; font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: rgba(255,255,255,0.18); line-height: 1; z-index: 1; pointer-events: none; }
+    .service-body { padding: 20px 22px 24px; }
+    .service-body h3 { font-size: 17px; font-weight: 600; letter-spacing: 1px; color: var(--white); margin-bottom: 8px; }
+    .service-body p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+    .service-more { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--electric); font-weight: 600; }
+    .modal-overlay { position: fixed; inset: 0; z-index: 9000; background: rgba(5,9,15,0.92); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity .3s; }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
-
-    .modal-box {
-      background: var(--deep-blue);
-      border: 1px solid rgba(37,99,235,0.3);
-      border-radius: 6px;
-      max-width: 820px; width: 100%;
-      max-height: 90vh;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      transform: scale(.92) translateY(20px);
-      transition: transform .35s ease;
-      position: relative;
-    }
-    .modal-overlay.open .modal-box {
-      transform: scale(1) translateY(0);
-    }
-    .modal-img-wrap {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: var(--mid-blue);
-    }
-    .modal-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      display: block;
-    }
-    .modal-img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 14px;
-      background: linear-gradient(135deg, var(--mid-blue), var(--accent));
-      color: var(--text-muted);
-    }
+    .modal-box { background: var(--deep-blue); border: 1px solid rgba(37,99,235,0.3); border-radius: 6px; max-width: 820px; width: 100%; max-height: 90vh; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; transform: scale(.92) translateY(20px); transition: transform .35s ease; position: relative; }
+    .modal-overlay.open .modal-box { transform: scale(1) translateY(0); }
+    .modal-img-wrap { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: var(--mid-blue); }
+    .modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .modal-img-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: linear-gradient(135deg, var(--mid-blue), var(--accent)); color: var(--text-muted); }
     .modal-img-placeholder i { font-size: 48px; color: var(--electric); }
-    .modal-content {
-      padding: 36px 32px;
-      display: flex; flex-direction: column;
-      justify-content: center; gap: 16px;
-      overflow-y: auto;
-    }
-    .modal-tag {
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--electric);
-    }
+    .modal-content { padding: 36px 32px; display: flex; flex-direction: column; justify-content: center; gap: 16px; overflow-y: auto; }
+    .modal-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--electric); }
     .modal-tag::before { content: '— '; color: var(--gold); }
-    .modal-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(22px, 3vw, 32px); font-weight: 700;
-      color: var(--white); line-height: 1.1;
-    }
-    .modal-desc {
-      font-size: 15px; color: var(--text-muted); line-height: 1.8;
-    }
-    .modal-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--electric); color: #fff;
-      padding: 13px 24px; text-decoration: none;
-      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-      font-weight: 600; border-radius: 2px;
-      transition: all .3s; align-self: flex-start; margin-top: 6px;
-      border: none; cursor: pointer; font-family: 'Rajdhani', sans-serif;
-    }
+    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3vw, 32px); font-weight: 700; color: var(--white); line-height: 1.1; }
+    .modal-desc { font-size: 15px; color: var(--text-muted); line-height: 1.8; }
+    .modal-cta { display: inline-flex; align-items: center; gap: 10px; background: var(--electric); color: #fff; padding: 13px 24px; text-decoration: none; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; border-radius: 2px; transition: all .3s; align-self: flex-start; margin-top: 6px; border: none; cursor: pointer; font-family: 'Rajdhani', sans-serif; }
     .modal-cta:hover { background: var(--glow); box-shadow: 0 4px 24px rgba(37,99,235,0.4); }
-    .modal-close {
-      position: absolute; top: 16px; right: 16px;
-      background: rgba(37,99,235,0.15);
-      border: 1px solid var(--border);
-      color: var(--text-muted); cursor: pointer;
-      width: 36px; height: 36px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; transition: all .3s; z-index: 2;
-    }
+    .modal-close { position: absolute; top: 16px; right: 16px; background: rgba(37,99,235,0.15); border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: all .3s; z-index: 2; }
     .modal-close:hover { background: var(--electric); color: #fff; border-color: var(--electric); }
-
-    /* ===== GALERÍA INSTALACIONES ===== */
     #galeria { background: var(--navy); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 220px 220px;
-      gap: 12px;
-    }
-    .gallery-item {
-      background: var(--mid-blue);
-      border-radius: 4px; overflow: hidden;
-      position: relative; border: 1px solid var(--border);
-      transition: transform .3s;
-    }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 220px 220px; gap: 12px; }
+    .gallery-item { background: var(--mid-blue); border-radius: 4px; overflow: hidden; position: relative; border: 1px solid var(--border); transition: transform .3s; }
     .gallery-item:hover { transform: scale(1.02); z-index: 2; }
     .gallery-item.tall { grid-row: span 2; }
-
-    /* Imagen real en galería instalaciones */
-    .gallery-item img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      display: block;
-    }
-
-    .gallery-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 12px;
-      background: linear-gradient(135deg, var(--mid-blue), var(--accent));
-      color: var(--text-muted); font-size: 13px; letter-spacing: 1px;
-    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(135deg, var(--mid-blue), var(--accent)); color: var(--text-muted); font-size: 13px; letter-spacing: 1px; }
     .gallery-placeholder i { font-size: 28px; color: var(--electric); }
-    .gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(5,9,15,0.85) 0%, transparent 50%);
-      display: flex; align-items: flex-end; padding: 20px;
-      opacity: 0; transition: opacity .3s;
-    }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,9,15,0.85) 0%, transparent 50%); display: flex; align-items: flex-end; padding: 20px; opacity: 0; transition: opacity .3s; }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
     .gallery-overlay span { font-size: 13px; letter-spacing: 2px; color: var(--white); font-weight: 600; }
 
-    /* ===== GALERÍA PACIENTES ===== */
+    /* ===== GALERÍA PACIENTES — CAMBIOS: minmax 260px, aspect-ratio 1/1, zoom en hover ===== */
     #pacientes { background: var(--deep-blue); }
     .patients-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 16px;
     }
     .patient-card {
       background: var(--navy); border: 1px solid var(--border);
       border-radius: 4px; overflow: hidden;
-      position: relative; aspect-ratio: 3/4;
-      transition: all .3s;
+      position: relative; aspect-ratio: 1 / 1;
+      transition: border-color .3s, box-shadow .3s;
     }
     .patient-card:hover { border-color: var(--electric); box-shadow: 0 8px 32px rgba(37,99,235,0.2); }
-
-    /* Imagen real en tarjeta de paciente */
     .patient-card img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center;
       display: block;
+      transition: transform .5s ease;
     }
-
-    .patient-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 10px;
-      background: linear-gradient(160deg, var(--mid-blue) 0%, var(--accent) 100%);
-      color: var(--text-muted); font-size: 12px; letter-spacing: 1px;
-      text-align: center; padding: 20px;
-    }
+    .patient-card:hover img { transform: scale(1.08); }
+    .patient-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(160deg, var(--mid-blue) 0%, var(--accent) 100%); color: var(--text-muted); font-size: 12px; letter-spacing: 1px; text-align: center; padding: 20px; }
     .patient-placeholder i { font-size: 32px; color: var(--electric); }
-    .patient-badge {
-      position: absolute; top: 12px; left: 12px;
-      background: var(--electric); color: #fff;
-      font-size: 10px; letter-spacing: 2px;
-      padding: 4px 10px; border-radius: 2px; text-transform: uppercase;
-    }
+    .patient-badge { position: absolute; top: 12px; left: 12px; background: var(--electric); color: #fff; font-size: 10px; letter-spacing: 2px; padding: 4px 10px; border-radius: 2px; text-transform: uppercase; z-index: 1; }
 
-    /* ===== UBICACIÓN ===== */
     #ubicacion { background: var(--navy); }
-    .location-wrap {
-      display: grid; grid-template-columns: 1fr 1.6fr;
-      gap: 40px; align-items: start;
-    }
+    .location-wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; align-items: start; }
     .location-info { display: flex; flex-direction: column; gap: 28px; }
     .info-item { display: flex; gap: 18px; align-items: flex-start; }
-    .info-icon {
-      width: 46px; height: 46px; border-radius: 4px;
-      background: rgba(37,99,235,0.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; color: var(--electric); flex-shrink: 0;
-    }
+    .info-icon { width: 46px; height: 46px; border-radius: 4px; background: rgba(37,99,235,0.1); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--electric); flex-shrink: 0; }
     .info-text h4 { font-size: 14px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
     .info-text p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
-    .map-wrap {
-      border-radius: 4px; overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-      height: 420px;
-    }
-    .map-wrap iframe {
-      width: 100%; height: 100%; border: none; display: block;
-      filter: hue-rotate(200deg) saturate(0.5) brightness(0.7);
-    }
-
-    /* ===== CONTACTO ===== */
+    .map-wrap { border-radius: 4px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,0.4); height: 420px; }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; filter: hue-rotate(200deg) saturate(0.5) brightness(0.7); }
     #contacto { background: var(--deep-blue); }
     .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .contact-form { display: flex; flex-direction: column; gap: 18px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-group { display: flex; flex-direction: column; gap: 8px; }
     .form-group label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      background: var(--navy); border: 1px solid var(--border);
-      color: var(--white); padding: 14px 16px;
-      font-family: 'Rajdhani', sans-serif; font-size: 15px;
-      border-radius: 2px; outline: none; transition: border-color .3s; resize: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--electric); }
+    .form-group input, .form-group textarea, .form-group select { background: var(--navy); border: 1px solid var(--border); color: var(--white); padding: 14px 16px; font-family: 'Rajdhani', sans-serif; font-size: 15px; border-radius: 2px; outline: none; transition: border-color .3s; resize: none; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--electric); }
     .form-group select option { background: var(--navy); }
-    .form-submit {
-      background: var(--electric); color: #fff;
-      border: none; cursor: pointer; padding: 16px;
-      font-family: 'Rajdhani', sans-serif; font-size: 13px;
-      letter-spacing: 3px; text-transform: uppercase; font-weight: 700;
-      border-radius: 2px; transition: all .3s; margin-top: 8px;
-    }
+    .form-submit { background: var(--electric); color: #fff; border: none; cursor: pointer; padding: 16px; font-family: 'Rajdhani', sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; border-radius: 2px; transition: all .3s; margin-top: 8px; }
     .form-submit:hover { background: var(--glow); box-shadow: 0 4px 24px rgba(37,99,235,0.4); }
     .contact-ctas { display: flex; flex-direction: column; gap: 20px; }
-    .contact-card {
-      background: var(--navy); border: 1px solid var(--border);
-      border-radius: 4px; padding: 28px;
-      display: flex; align-items: center; gap: 20px;
-      text-decoration: none; transition: all .3s;
-    }
+    .contact-card { background: var(--navy); border: 1px solid var(--border); border-radius: 4px; padding: 28px; display: flex; align-items: center; gap: 20px; text-decoration: none; transition: all .3s; }
     .contact-card:hover { border-color: var(--electric); transform: translateX(6px); }
-    .contact-card-icon {
-      width: 54px; height: 54px; border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; flex-shrink: 0;
-    }
+    .contact-card-icon { width: 54px; height: 54px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
     .wa  { background: rgba(37,211,102,0.1); color: #25D366; }
     .fb  { background: rgba(24,119,242,0.1); color: #1877F2; }
     .ph  { background: rgba(37,99,235,0.1); color: var(--electric); }
     .contact-card-text h4 { font-size: 16px; color: var(--white); font-weight: 600; }
     .contact-card-text p  { font-size: 13px; color: var(--text-muted); }
-
-    /* ===== WHATSAPP FLOTANTE ===== */
-    .wa-float {
-      position: fixed; bottom: 30px; right: 30px; z-index: 9999;
-      width: 60px; height: 60px; border-radius: 50%;
-      background: #25D366;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 26px; color: #fff; text-decoration: none;
-      box-shadow: 0 6px 32px rgba(37,211,102,0.45);
-      transition: all .3s;
-      animation: pulse-wa 2.5s infinite;
-    }
+    .wa-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #fff; text-decoration: none; box-shadow: 0 6px 32px rgba(37,211,102,0.45); transition: all .3s; animation: pulse-wa 2.5s infinite; }
     .wa-float:hover { transform: scale(1.1); }
-    @keyframes pulse-wa {
-      0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-      50%      { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--navy);
-      border-top: 1px solid var(--border);
-      padding: 60px 6% 30px;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px; margin-bottom: 40px;
-    }
+    @keyframes pulse-wa { 0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); } 50% { box-shadow: 0 0 0 14px rgba(37,211,102,0); } }
+    footer { background: var(--navy); border-top: 1px solid var(--border); padding: 60px 6% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
     .footer-brand { display: flex; flex-direction: column; gap: 18px; }
     .footer-logo { display: flex; align-items: center; gap: 12px; }
     .footer-logo-img { height: 46px; width: auto; object-fit: contain; }
-    .footer-logo-fallback {
-      width: 46px; height: 46px; border-radius: 50%;
-      background: var(--mid-blue); border: 2px solid var(--electric);
-      display: none; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; color: var(--gold); font-weight: 700;
-    }
+    .footer-logo-fallback { width: 46px; height: 46px; border-radius: 50%; background: var(--mid-blue); border: 2px solid var(--electric); display: none; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); font-weight: 700; }
     .footer-name span:first-child { display: block; font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--white); }
     .footer-name span:last-child { font-size: 11px; letter-spacing: 3px; color: var(--gold); }
     .footer-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
     .footer-social { display: flex; gap: 12px; }
-    .social-btn {
-      width: 38px; height: 38px; border-radius: 4px;
-      background: var(--mid-blue); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; color: var(--text-muted); text-decoration: none; transition: all .3s;
-    }
+    .social-btn { width: 38px; height: 38px; border-radius: 4px; background: var(--mid-blue); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 15px; color: var(--text-muted); text-decoration: none; transition: all .3s; }
     .social-btn:hover { background: var(--electric); color: #fff; border-color: var(--electric); }
     .footer-col h4 { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col ul li a { text-decoration: none; color: var(--text-muted); font-size: 14px; transition: color .3s; }
     .footer-col ul li a:hover { color: var(--white); }
-    .footer-bottom {
-      border-top: 1px solid var(--border); padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--text-muted);
-    }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--text-muted); }
     .footer-bottom span { color: var(--gold); }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp {
-      from { opacity:0; transform:translateY(30px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
-    @keyframes fadeInRight {
-      from { opacity:0; transform:translate(40px, -50%); }
-      to   { opacity:1; transform:translate(0, -50%); }
-    }
-    .reveal {
-      opacity:0; transform:translateY(30px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeInRight { from { opacity:0; transform:translate(40px, -50%); } to { opacity:1; transform:translate(0, -50%); } }
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
-
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .nav-links, .nav-cta { display:none; }
       .hamburger { display:flex; }
@@ -734,44 +263,25 @@
       .form-row { grid-template-columns:1fr; }
       .modal-box { grid-template-columns: 1fr; }
       .modal-img-wrap { aspect-ratio: 16/9; }
+      .patients-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
     }
-
-    /* ===== MOBILE NAV ===== */
-    .mobile-nav {
-      position: fixed; inset:0; z-index:999;
-      background: rgba(5,9,15,0.97); backdrop-filter:blur(20px);
-      display:flex; flex-direction:column;
-      align-items:center; justify-content:center;
-      gap:32px; transform:translateX(100%); transition:transform .4s;
-    }
+    .mobile-nav { position: fixed; inset:0; z-index:999; background: rgba(5,9,15,0.97); backdrop-filter:blur(20px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px; transform:translateX(100%); transition:transform .4s; }
     .mobile-nav.open { transform:translateX(0); }
-    .mobile-nav a {
-      font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300;
-      text-decoration:none; color:var(--white); letter-spacing:2px; transition:color .3s;
-    }
+    .mobile-nav a { font-family:'Cormorant Garamond',serif; font-size:32px; font-weight:300; text-decoration:none; color:var(--white); letter-spacing:2px; transition:color .3s; }
     .mobile-nav a:hover { color:var(--gold); }
-    .close-btn {
-      position:absolute; top:24px; right:24px;
-      background:none; border:none; color:var(--white); font-size:24px; cursor:pointer;
-    }
+    .close-btn { position:absolute; top:24px; right:24px; background:none; border:none; color:var(--white); font-size:24px; cursor:pointer; }
+    .swal2-popup { font-family: 'Poppins', sans-serif; border-radius: 20px; }
+    .swal2-title { font-size: 1.5rem; color: #1e2a32; }
+    .swal2-confirm { background-color: #c9a96e !important; border-radius: 40px !important; padding: 10px 24px !important; font-weight: 600 !important; }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img
-      class="nav-logo-img"
-      src="img/1.png"
-      alt="Belanova For Men logo"
-      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-    />
+    <img class="nav-logo-img" src="img/1.png" alt="Belanova For Men logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
     <div class="nav-logo-fallback">B</div>
-    <div class="nav-brand">
-      <span>Belanova</span>
-      <span>For Men</span>
-    </div>
+    <div class="nav-brand"><span>Belanova</span><span>For Men</span></div>
   </div>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
@@ -786,7 +296,6 @@
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mobile-nav">
   <button class="close-btn" onclick="document.querySelector('.mobile-nav').classList.remove('open')"><i class="fas fa-times"></i></button>
   <a href="#servicios" onclick="this.closest('.mobile-nav').classList.remove('open')">Servicios</a>
@@ -796,7 +305,6 @@
   <a href="#contacto" onclick="this.closest('.mobile-nav').classList.remove('open')">Contacto</a>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -809,7 +317,6 @@
       <a href="#servicios" class="btn-outline"><i class="fas fa-arrow-down"></i> Ver Servicios</a>
     </div>
   </div>
-
   <div class="hero-visual" aria-hidden="true">
     <div class="hero-card featured">
       <div class="hero-card-icon"><i class="fas fa-spa"></i></div>
@@ -827,24 +334,14 @@
       <p>Especialistas certificados</p>
     </div>
   </div>
-
   <div class="stats-bar">
-    <div class="stat-item">
-      <div><div class="stat-number">2000+</div><div class="stat-label">Clientes Satisfechos</div></div>
-    </div>
-    <div class="stat-item">
-      <div><div class="stat-number">10+</div><div class="stat-label">Años de Experiencia</div></div>
-    </div>
-    <div class="stat-item">
-      <div><div class="stat-number">15+</div><div class="stat-label">Tratamientos</div></div>
-    </div>
-    <div class="stat-item">
-      <div><div class="stat-number">100%</div><div class="stat-label">Satisfacción Garantizada</div></div>
-    </div>
+    <div class="stat-item"><div><div class="stat-number">2000+</div><div class="stat-label">Clientes Satisfechos</div></div></div>
+    <div class="stat-item"><div><div class="stat-number">10+</div><div class="stat-label">Años de Experiencia</div></div></div>
+    <div class="stat-item"><div><div class="stat-number">15+</div><div class="stat-label">Tratamientos</div></div></div>
+    <div class="stat-item"><div><div class="stat-number">100%</div><div class="stat-label">Satisfacción Garantizada</div></div></div>
   </div>
 </section>
 
-<!-- SERVICIOS -->
 <section id="servicios">
   <div class="section-header reveal">
     <div class="section-tag">Nuestros Servicios</div>
@@ -853,216 +350,72 @@
     <p class="section-desc">Ofrecemos una amplia gama de tratamientos estéticos diseñados específicamente para las necesidades del hombre moderno. Haz clic en cada tarjeta para conocer más.</p>
   </div>
   <div class="services-grid">
-
-    <!-- 01 -->
-    <article class="service-card reveal"
-      data-title="Micropigmentación Capilar"
-      data-desc="La micropigmentación capilar es un tratamiento estético no invasivo que consiste en aplicar microdepósitos de pigmento en el cuero cabelludo para simular la apariencia de folículos capilares."
-      data-img="img/micropigmentacion_capilar.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Micropigmentación Capilar" data-desc="La micropigmentación capilar es un tratamiento estético no invasivo que consiste en aplicar microdepósitos de pigmento en el cuero cabelludo para simular la apariencia de folículos capilares." data-img="img/micropigmentacion_capilar.webp" onclick="openModal(this)">
       <div class="service-num">01</div>
-      <div class="service-img-wrap">
-        <img src="img/micropigmentacion_capilar.webp" alt="Micropigmentación Capilar para hombres en Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user\'></i><span>Micropigmentación Capilar</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Micropigmentación Capilar</h3>
-        <p>Simula la apariencia del cabello con micro puntos, logrando un look más uniforme y natural.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/micropigmentacion_capilar.webp" alt="Micropigmentación Capilar para hombres en Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user\'></i><span>Micropigmentación Capilar</span></div>'"/></div>
+      <div class="service-body"><h3>Micropigmentación Capilar</h3><p>Simula la apariencia del cabello con micro puntos, logrando un look más uniforme y natural.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 02 -->
-    <article class="service-card reveal"
-      data-title="Limpieza Facial"
-      data-desc="La limpieza facial es un tratamiento que elimina impurezas, exceso de grasa y células muertas, ayudando a mantener la piel saludable. Mejora la textura, previene imperfecciones y aporta frescura al rostro. Ideal para todo tipo de piel, dejándola más limpia, suave y visiblemente luminosa."
-      data-img="img/limpieza facial.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Limpieza Facial" data-desc="La limpieza facial es un tratamiento que elimina impurezas, exceso de grasa y células muertas, ayudando a mantener la piel saludable. Mejora la textura, previene imperfecciones y aporta frescura al rostro. Ideal para todo tipo de piel, dejándola más limpia, suave y visiblemente luminosa." data-img="img/limpieza facial.webp" onclick="openModal(this)">
       <div class="service-num">02</div>
-      <div class="service-img-wrap">
-        <img src="img/limpieza facial.webp" alt="Limpieza Facial facial para hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pump-soap\'></i><span>Limpieza Facial</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Limpieza Facial</h3>
-        <p>Elimina impurezas y células muertas, dejando la piel más limpia y renovada</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/limpieza facial.webp" alt="Limpieza Facial para hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pump-soap\'></i><span>Limpieza Facial</span></div>'"/></div>
+      <div class="service-body"><h3>Limpieza Facial</h3><p>Elimina impurezas y células muertas, dejando la piel más limpia y renovada</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 03 -->
-    <article class="service-card reveal"
-      data-title="Descarga Muscular"
-      data-desc="La descarga muscular es un tratamiento terapéutico que ayuda a aliviar la tensión acumulada en los músculos, reduciendo molestias y fatiga. Mejora la circulación, favorece la recuperación física y brinda una sensación de relajación profunda. Ideal para personas con estrés, actividad física intensa o sobrecarga muscular."
-      data-img="img/descarga muscular.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Descarga Muscular" data-desc="La descarga muscular es un tratamiento terapéutico que ayuda a aliviar la tensión acumulada en los músculos, reduciendo molestias y fatiga. Mejora la circulación, favorece la recuperación física y brinda una sensación de relajación profunda. Ideal para personas con estrés, actividad física intensa o sobrecarga muscular." data-img="img/descarga muscular.webp" onclick="openModal(this)">
       <div class="service-num">03</div>
-      <div class="service-img-wrap">
-        <img src="img/descarga muscular.webp" alt="Descarga Muscular hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user-injured\'></i><span>Descarga Muscular</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Descarga Muscular</h3>
-        <p>Alivia la tensión muscular y mejora la recuperación física mediante técnicas especializadas.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/descarga muscular.webp" alt="Descarga Muscular hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user-injured\'></i><span>Descarga Muscular</span></div>'"/></div>
+      <div class="service-body"><h3>Descarga Muscular</h3><p>Alivia la tensión muscular y mejora la recuperación física mediante técnicas especializadas.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 04 -->
-    <article class="service-card reveal"
-      data-title="Reducción de Medidas"
-      data-desc="La reducción de medidas es un tratamiento estético enfocado en disminuir volumen corporal y moldear la figura. Ayuda a eliminar grasa localizada, mejorar la firmeza de la piel y estilizar zonas específicas. Ideal para complementar hábitos saludables, logrando un aspecto más definido y armonioso."
-      data-img="img/reduccion_medidas.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Reducción de Medidas" data-desc="La reducción de medidas es un tratamiento estético enfocado en disminuir volumen corporal y moldear la figura. Ayuda a eliminar grasa localizada, mejorar la firmeza de la piel y estilizar zonas específicas. Ideal para complementar hábitos saludables, logrando un aspecto más definido y armonioso." data-img="img/reduccion_medidas.webp" onclick="openModal(this)">
       <div class="service-num">04</div>
-      <div class="service-img-wrap">
-        <img src="img/reduccion_medidas.webp" alt="Reducción de Medidas hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-weight\'></i><span>Reducción de Medidas</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Reducción de Medidas</h3>
-        <p>Elimina grasa localizada y mejora el contorno corporal de forma no invasiva.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/reduccion_medidas.webp" alt="Reducción de Medidas hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-weight\'></i><span>Reducción de Medidas</span></div>'"/></div>
+      <div class="service-body"><h3>Reducción de Medidas</h3><p>Elimina grasa localizada y mejora el contorno corporal de forma no invasiva.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 05 -->
-    <article class="service-card reveal"
-      data-title="Reducción de Papada"
-      data-desc="La reducción de papada es un tratamiento estético que ayuda a disminuir la grasa acumulada bajo el mentón, mejorando el contorno facial. Favorece una apariencia más definida y estilizada, aportando firmeza a la piel. Ideal para quienes buscan un perfil más armónico y rejuvenecido sin procedimientos invasivos."
-      data-img="img/reduccion_papada.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Reducción de Papada" data-desc="La reducción de papada es un tratamiento estético que ayuda a disminuir la grasa acumulada bajo el mentón, mejorando el contorno facial. Favorece una apariencia más definida y estilizada, aportando firmeza a la piel. Ideal para quienes buscan un perfil más armónico y rejuvenecido sin procedimientos invasivos." data-img="img/reduccion_papada.webp" onclick="openModal(this)">
       <div class="service-num">05</div>
-      <div class="service-img-wrap">
-        <img src="img/reduccion_papada.webp" alt="Reducción de Papada para hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-smile\'></i><span>Reducción de Papada</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Reducción de Papada</h3>
-        <p>Reduce grasa en la zona del mentón y define el perfil del rostro</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/reduccion_papada.webp" alt="Reducción de Papada para hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-smile\'></i><span>Reducción de Papada</span></div>'"/></div>
+      <div class="service-body"><h3>Reducción de Papada</h3><p>Reduce grasa en la zona del mentón y define el perfil del rostro</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 06 -->
-    <article class="service-card reveal"
-      data-title="Rejuvenecimiento Facial"
-      data-desc="El rejuvenecimiento facial es un tratamiento estético que mejora la apariencia de la piel, reduciendo líneas de expresión y signos de envejecimiento. Estimula la regeneración, aporta firmeza y devuelve luminosidad al rostro. Ideal para lograr una piel más joven, fresca y revitalizada."
-      data-img="img/rf.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Rejuvenecimiento Facial" data-desc="El rejuvenecimiento facial es un tratamiento estético que mejora la apariencia de la piel, reduciendo líneas de expresión y signos de envejecimiento. Estimula la regeneración, aporta firmeza y devuelve luminosidad al rostro. Ideal para lograr una piel más joven, fresca y revitalizada." data-img="img/rf.webp" onclick="openModal(this)">
       <div class="service-num">06</div>
-      <div class="service-img-wrap">
-        <img src="img/rf.webp" alt="Rejuvenecimiento para hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-spa\'></i><span>Rejuvenecimiento Facial</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Rejuvenecimiento Facial</h3>
-        <p>Mejora la firmeza y textura de la piel, logrando un aspecto más joven.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/rf.webp" alt="Rejuvenecimiento para hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-spa\'></i><span>Rejuvenecimiento Facial</span></div>'"/></div>
+      <div class="service-body"><h3>Rejuvenecimiento Facial</h3><p>Mejora la firmeza y textura de la piel, logrando un aspecto más joven.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 07 -->
-    <article class="service-card reveal"
-      data-title="Extracción de Acrocordones"
-      data-desc="La extracción de acrocordones es un procedimiento estético que elimina pequeñas lesiones benignas de la piel de forma rápida y segura. Ayuda a mejorar la apariencia, dejando la piel más limpia y uniforme. Ideal para zonas donde estos crecimientos generan incomodidad o afectan la estética."
-      data-img="img/l.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Extracción de Acrocordones" data-desc="La extracción de acrocordones es un procedimiento estético que elimina pequeñas lesiones benignas de la piel de forma rápida y segura. Ayuda a mejorar la apariencia, dejando la piel más limpia y uniforme. Ideal para zonas donde estos crecimientos generan incomodidad o afectan la estética." data-img="img/l.webp" onclick="openModal(this)">
       <div class="service-num">07</div>
-      <div class="service-img-wrap">
-        <img src="img/l.webp" alt="Extracción de Acrocordones para hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-cut\'></i><span>Extracción de Acrocordones</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Extracción de Acrocordones</h3>
-        <p>Elimina lunares/bultitos de la piel de forma rápida y segura.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/l.webp" alt="Extracción de Acrocordones para hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-cut\'></i><span>Extracción de Acrocordones</span></div>'"/></div>
+      <div class="service-body"><h3>Extracción de Acrocordones</h3><p>Elimina lunares/bultitos de la piel de forma rápida y segura.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 08 -->
-    <article class="service-card reveal"
-      data-title="Micropigmentación de Cejas"
-      data-desc="La micropigmentación de cejas es un tratamiento estético que define, corrige y rellena las cejas con pigmentos semipermanentes. Permite lograr un diseño natural y armonioso, resaltando la mirada. Ideal para quienes buscan cejas definidas sin necesidad de maquillaje diario."
-      data-img="img/cejas.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Micropigmentación de Cejas" data-desc="La micropigmentación de cejas es un tratamiento estético que define, corrige y rellena las cejas con pigmentos semipermanentes. Permite lograr un diseño natural y armonioso, resaltando la mirada. Ideal para quienes buscan cejas definidas sin necesidad de maquillaje diario." data-img="img/cejas.webp" onclick="openModal(this)">
       <div class="service-num">08</div>
-      <div class="service-img-wrap">
-        <img src="img/cejas.webp" alt="Micropigmentación de Cejas para hombres Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pen\'></i><span>Micropigmentación de Cejas</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Micropigmentación de Cejas</h3>
-        <p>Define y rellena las cejas para un resultado natural y equilibrado.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/cejas.webp" alt="Micropigmentación de Cejas para hombres Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pen\'></i><span>Micropigmentación de Cejas</span></div>'"/></div>
+      <div class="service-body"><h3>Micropigmentación de Cejas</h3><p>Define y rellena las cejas para un resultado natural y equilibrado.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 09 -->
-    <article class="service-card reveal"
-      data-title="Neutralización de Labios"
-      data-desc="La neutralización de labios es un tratamiento estético que corrige tonos oscuros o desiguales mediante la aplicación de pigmentos especializados. Ayuda a unificar el color y realzar la apariencia natural de los labios, logrando un aspecto más uniforme, saludable y armonioso."
-      data-img="img/labios.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Neutralización de Labios" data-desc="La neutralización de labios es un tratamiento estético que corrige tonos oscuros o desiguales mediante la aplicación de pigmentos especializados. Ayuda a unificar el color y realzar la apariencia natural de los labios, logrando un aspecto más uniforme, saludable y armonioso." data-img="img/labios.webp" onclick="openModal(this)">
       <div class="service-num">09</div>
-      <div class="service-img-wrap">
-        <img src="img/labios.webp" alt="Neutralización de Labios Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-magic\'></i><span>Neutralización de Labios</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Neutralización de Labios</h3>
-        <p>Unifica el tono de los labios y mejora su apariencia.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/labios.webp" alt="Neutralización de Labios Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-magic\'></i><span>Neutralización de Labios</span></div>'"/></div>
+      <div class="service-body"><h3>Neutralización de Labios</h3><p>Unifica el tono de los labios y mejora su apariencia.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
-    <!-- 10 -->
-    <article class="service-card reveal"
-      data-title="Aclaramiento de Ojeras"
-      data-desc="El aclaramiento de ojeras es un tratamiento estético que reduce la pigmentación oscura bajo los ojos, mejorando el tono y la luminosidad de la piel. Ayuda a lograr una mirada más fresca, descansada y rejuvenecida, devolviendo vitalidad al rostro."
-      data-img="img/aclaramiento de ojeras.webp"
-      onclick="openModal(this)">
+    <article class="service-card reveal" data-title="Aclaramiento de Ojeras" data-desc="El aclaramiento de ojeras es un tratamiento estético que reduce la pigmentación oscura bajo los ojos, mejorando el tono y la luminosidad de la piel. Ayuda a lograr una mirada más fresca, descansada y rejuvenecida, devolviendo vitalidad al rostro." data-img="img/aclaramiento de ojeras.webp" onclick="openModal(this)">
       <div class="service-num">10</div>
-      <div class="service-img-wrap">
-        <img src="img/aclaramiento de ojeras.webp" alt="Aclaramiento de Ojeras Belanova For Men"
-          onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-eye\'></i><span>Aclaramiento de Ojeras</span></div>'"/>
-      </div>
-      <div class="service-body">
-        <h3>Aclaramiento de Ojeras</h3>
-        <p>Reduce la pigmentación oscura y mejora la apariencia de la zona, logrando una mirada más fresca y descansada.</p>
-        <span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span>
-      </div>
+      <div class="service-img-wrap"><img src="img/aclaramiento de ojeras.webp" alt="Aclaramiento de Ojeras Belanova For Men" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-eye\'></i><span>Aclaramiento de Ojeras</span></div>'"/></div>
+      <div class="service-body"><h3>Aclaramiento de Ojeras</h3><p>Reduce la pigmentación oscura y mejora la apariencia de la zona, logrando una mirada más fresca y descansada.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
     </article>
-
   </div>
 </section>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeModalOnOverlay(event)">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
-    <div class="modal-img-wrap" id="modalImgWrap">
-      <!-- imagen inyectada por JS -->
-    </div>
+    <div class="modal-img-wrap" id="modalImgWrap"></div>
     <div class="modal-content">
       <span class="modal-tag">Tratamiento Especializado</span>
       <h3 class="modal-title" id="modalTitle">Título</h3>
       <p class="modal-desc" id="modalDesc">Descripción</p>
-      <button class="modal-cta" onclick="bookFromModal()">
-        <i class="fab fa-whatsapp"></i> Agendar este tratamiento
-      </button>
+      <button class="modal-cta" onclick="bookFromModal()"><i class="fab fa-whatsapp"></i> Agendar este tratamiento</button>
     </div>
   </div>
 </div>
 
-<!-- GALERÍA INSTALACIONES -->
-<!--
-  INSTRUCCIONES — Sección "Un espacio Diseñado para Ti":
-  Cada .gallery-item tiene un <img> con src="img/TU_IMAGEN.jpg".
-  Reemplaza ese src con la ruta real de tu foto.
-  Si la imagen falla, se muestra automáticamente el placeholder de ícono.
-  El item con clase "tall" ocupa 2 filas (imagen vertical/portrait).
--->
 <section id="galeria">
   <div class="section-header reveal">
     <div class="section-tag">Nuestras Instalaciones</div>
@@ -1071,73 +424,34 @@
     <p class="section-desc">Ambientes modernos, limpios y pensados para que disfrutes de una experiencia premium en cada visita.</p>
   </div>
   <div class="gallery-grid reveal">
-
-    <!-- Imagen 1 — columna izquierda, altura doble (tall) -->
     <div class="gallery-item tall">
-      <img
-        src="img/instalacion_1.jpg"
-        alt="Sala de Tratamientos — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/instalacion_1.jpg" alt="Sala de Tratamientos — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="gallery-placeholder" style="display:none;"><i class="fas fa-couch"></i><span>Sala de Tratamientos</span><small>Ambiente Premium</small></div>
       <div class="gallery-overlay"><span>Sala Principal</span></div>
     </div>
-
-    <!-- Imagen 2 -->
     <div class="gallery-item">
-      <img
-        src="img/instalacion_2.jpg"
-        alt="Equipos Tecnológicos — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/instalacion_2.jpg" alt="Equipos Tecnológicos — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="gallery-placeholder" style="display:none;"><i class="fas fa-microscope"></i><span>Equipos Tecnológicos</span></div>
       <div class="gallery-overlay"><span>Tecnología de Punta</span></div>
     </div>
-
-    <!-- Imagen 3 -->
     <div class="gallery-item">
-      <img
-        src="img/instalacion_3.jpg"
-        alt="Zona de Relajación — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/instalacion_3.jpg" alt="Zona de Relajación — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="gallery-placeholder" style="display:none;"><i class="fas fa-spa"></i><span>Zona de Relajación</span></div>
       <div class="gallery-overlay"><span>Zona Relax</span></div>
     </div>
-
-    <!-- Imagen 4 -->
     <div class="gallery-item">
-      <img
-        src="img/instalacion_4.jpg"
-        alt="Recepción — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/instalacion_4.jpg" alt="Recepción — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="gallery-placeholder" style="display:none;"><i class="fas fa-door-open"></i><span>Recepción</span></div>
       <div class="gallery-overlay"><span>Recepción</span></div>
     </div>
-
-    <!-- Imagen 5 -->
     <div class="gallery-item">
-      <img
-        src="img/instalacion_5.jpg"
-        alt="Productos Premium — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/instalacion_5.jpg" alt="Productos Premium — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="gallery-placeholder" style="display:none;"><i class="fas fa-flask"></i><span>Productos Premium</span></div>
       <div class="gallery-overlay"><span>Productos de Calidad</span></div>
     </div>
-
   </div>
 </section>
 
-<!-- GALERÍA PACIENTES -->
-<!--
-  INSTRUCCIONES — Sección "Resultados Reales":
-  Cada .patient-card tiene un <img> con src="img/TU_IMAGEN.jpg".
-  Reemplaza ese src con la ruta real de tu foto de antes/después.
-  Si la imagen falla, se muestra automáticamente el placeholder de ícono.
-  El .patient-badge encima de la imagen permanece visible siempre.
--->
 <section id="pacientes">
   <div class="section-header reveal">
     <div class="section-tag">Casos de Éxito</div>
@@ -1146,77 +460,39 @@
     <p class="section-desc">Testimonios visuales de nuestros pacientes satisfechos. Resultados visibles desde la primera sesión.</p>
   </div>
   <div class="patients-grid">
-
-    <!-- Paciente 1 -->
     <div class="patient-card reveal">
-      <img
-        src="img/t1.webp"
-        alt="Antes y después Tratamiento Facial — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/t1.webp" alt="Antes y después Tratamiento Facial — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Tratamiento Facial</small></div>
       <div class="patient-badge">Antes / Después</div>
     </div>
-
-    <!-- Paciente 2 -->
     <div class="patient-card reveal">
-      <img
-        src="img/reduccion_medidas.webp"
-        alt="Antes y después Reducción de Medidas — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/reduccion_medidas.webp" alt="Antes y después Reducción de Medidas — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Reducción de Medidas</small></div>
-      <div class="patient-badge">Reducción de Medidas</div>
+      <div class="patient-badge">Antes / Después</div>
     </div>
-
-    <!-- Paciente 3 -->
     <div class="patient-card reveal">
-      <img
-        src="img/labios.webp"
-        alt="Antes y después Hidratación — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/labios.webp" alt="Antes y después Neutralización de Labios — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Neutralización de Labios</small></div>
-      <div class="patient-badge">Neutralización de Labios</div>
+      <div class="patient-badge">Antes / Después</div>
     </div>
-
-    <!-- Paciente 4 -->
     <div class="patient-card reveal">
-      <img
-        src="img/cejas.webp"
-        alt="Antes y después Micropigmentacion de cejas — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
-      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Micropigmentacion de cejas</small></div>
-      <div class="patient-badge">Micropigmentacion de cejas</div>
+      <img src="img/cejas.webp" alt="Antes y después Micropigmentación de Cejas — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Micropigmentación de Cejas</small></div>
+      <div class="patient-badge">Antes / Después</div>
     </div>
-
-    <!-- Paciente 5 -->
-    <div class="patient-card reveal">
-      <img
-        src="img/resultado_5.jpg"
-        alt="Antes y después Ojeras — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+    <!-- <div class="patient-card reveal">
+      <img src="img/resultado_5.jpg" alt="Antes y después Ojeras — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Ojeras</small></div>
-      <div class="patient-badge">Ojeras</div>
+      <div class="patient-badge">Antes / Después</div>
     </div>
-
-    <!-- Paciente 6 -->
     <div class="patient-card reveal">
-      <img
-        src="img/resultado_6.jpg"
-        alt="Antes y después Radiofrecuencia — Belanova For Men"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-      />
+      <img src="img/cabe.webp" alt="Antes y después Radiofrecuencia — Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
       <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Radiofrecuencia</small></div>
-      <div class="patient-badge">Radiofrecuencia</div>
-    </div>
-
+      <div class="patient-badge">Antes / Después</div>
+    </div> -->
   </div>
 </section>
 
-<!-- UBICACIÓN -->
 <section id="ubicacion">
   <div class="section-header reveal">
     <div class="section-tag">Encuéntranos</div>
@@ -1227,7 +503,7 @@
     <div class="location-info">
       <div class="info-item">
         <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div class="info-text"><h4>Dirección</h4><p>Los Fresnos 112. Miraflores. Piura<br>Actualiza con tu dirección exacta</p></div>
+        <div class="info-text"><h4>Dirección</h4><p>Los Fresnos 112. Miraflores. Piura</p></div>
       </div>
       <div class="info-item">
         <div class="info-icon"><i class="fas fa-clock"></i></div>
@@ -1241,9 +517,7 @@
         <div class="info-icon"><i class="fab fa-facebook"></i></div>
         <div class="info-text"><h4>Facebook</h4><p>Belanova For Men<br>Síguenos para novedades</p></div>
       </div>
-      <a href="https://wa.me/51900000000?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Belanova%20For%20Men" target="_blank" rel="noopener" class="btn-primary" style="align-self:flex-start;">
-        <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
-      </a>
+      <a href="https://wa.me/51958061938?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Belanova%20For%20Men" target="_blank" rel="noopener" class="btn-primary" style="align-self:flex-start;"><i class="fab fa-whatsapp"></i> Agendar por WhatsApp</a>
     </div>
     <div class="map-wrap">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3341.2652115744313!2d-80.62309777839663!3d-5.190715561027592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904a1bd39081f3ff%3A0x5c32391aba5472b7!2sBELANOVA%20Est%C3%A9tica%20Integral%20Piura!5e0!3m2!1ses-419!2spe!4v1776372691496!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -1251,7 +525,6 @@
   </div>
 </section>
 
-<!-- CONTACTO -->
 <section id="contacto">
   <div class="section-header reveal">
     <div class="section-tag">Contacto</div>
@@ -1262,19 +535,10 @@
   <div class="contact-wrap">
     <div class="contact-form reveal">
       <div class="form-row">
-        <div class="form-group">
-          <label for="cf-nombre">Nombre</label>
-          <input type="text" id="cf-nombre" placeholder="Tu nombre completo" autocomplete="name"/>
-        </div>
-        <div class="form-group">
-          <label for="cf-tel">Teléfono / WhatsApp</label>
-          <input type="tel" id="cf-tel" placeholder="+51 900 000 000" autocomplete="tel"/>
-        </div>
+        <div class="form-group"><label for="cf-nombre">Nombre</label><input type="text" id="cf-nombre" placeholder="Tu nombre completo" autocomplete="name"/></div>
+        <div class="form-group"><label for="cf-tel">Teléfono / WhatsApp</label><input type="tel" id="cf-tel" placeholder="+51 900 000 000" autocomplete="tel"/></div>
       </div>
-      <div class="form-group">
-        <label for="cf-email">Correo electrónico</label>
-        <input type="email" id="cf-email" placeholder="tucorreo@email.com" autocomplete="email"/>
-      </div>
+      <div class="form-group"><label for="cf-email">Correo electrónico</label><input type="email" id="cf-email" placeholder="tucorreo@email.com" autocomplete="email"/></div>
       <div class="form-group">
         <label for="cf-servicio">Servicio de interés</label>
         <select id="cf-servicio">
@@ -1291,13 +555,8 @@
           <option>Aclaramiento de Ojeras</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="cf-msg">Mensaje (opcional)</label>
-        <textarea id="cf-msg" rows="4" placeholder="Cuéntanos sobre tus necesidades o consultas..."></textarea>
-      </div>
-      <button class="form-submit" onclick="sendFormWA()">
-        <i class="fab fa-whatsapp" style="margin-right:8px;"></i>Enviar por WhatsApp
-      </button>
+      <div class="form-group"><label for="cf-msg">Mensaje (opcional)</label><textarea id="cf-msg" rows="4" placeholder="Cuéntanos sobre tus necesidades o consultas..."></textarea></div>
+      <button class="form-submit" onclick="sendFormWA()"><i class="fab fa-whatsapp" style="margin-right:8px;"></i>Enviar por WhatsApp</button>
     </div>
     <div class="contact-ctas reveal">
       <a href="https://wa.me/51958061938?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Belanova%20For%20Men" target="_blank" rel="noopener" class="contact-card">
@@ -1305,7 +564,7 @@
         <div class="contact-card-text"><h4>WhatsApp</h4><p>Chatea con nosotros ahora mismo</p></div>
         <i class="fas fa-arrow-right" style="margin-left:auto; color:var(--text-muted);"></i>
       </a>
-      <a href="https://www.facebook.com/profile.php?id=61580926012403" target="_blank" rel="noopener" class="contact-card">
+      <a href="https://www.facebook.com/share/18JeRm6whd/?mibextid=wwXIfr" target="_blank" rel="noopener" class="contact-card">
         <div class="contact-card-icon fb"><i class="fab fa-facebook-f"></i></div>
         <div class="contact-card-text"><h4>Facebook</h4><p>Belanova For Men</p></div>
         <i class="fas fa-arrow-right" style="margin-left:auto; color:var(--text-muted);"></i>
@@ -1323,29 +582,20 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">
-        <img
-          class="footer-logo-img"
-          src="img/1.png"
-          alt="Belanova For Men"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-        />
+        <img class="footer-logo-img" src="img/1.png" alt="Belanova For Men" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
         <div class="footer-logo-fallback">B</div>
-        <div class="footer-name">
-          <span>Belanova</span>
-          <span>For Men</span>
-        </div>
+        <div class="footer-name"><span>Belanova</span><span>For Men</span></div>
       </div>
       <p class="footer-desc">Centro de estética integral y cuidado personal diseñado exclusivamente para el hombre moderno. Tratamientos premium en Piura, La Libertad, Perú.</p>
       <div class="footer-social">
-        <a href="https://www.facebook.com/profile.php?id=61580926012403" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/share/18JeRm6whd/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://wa.me/51958061938" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/belanova_formen?igsh=MWJlNGZyZ2Q3ejBleg%3D%3D&utm_source=qr" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/belanova_formen?igsh=MWJlNGZyZ2Q3ejBleg%3D%3D&utm_source=qr" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@belanova.for.men?_r=1&_t=ZS-95cGIWbLFuJ" target="_blank" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
     <div class="footer-col">
@@ -1377,14 +627,11 @@
   </div>
 </footer>
 
-<!-- WHATSAPP FLOTANTE -->
-<a href="https://wa.me/51958061938?text=Hola%2C%20quiero%20información%20sobre%20Belanova%20For%20Men"
-   target="_blank" rel="noopener" class="wa-float" title="Chatea con nosotros en WhatsApp" aria-label="WhatsApp">
+<a href="https://wa.me/51958061938?text=Hola%2C%20quiero%20información%20sobre%20Belanova%20For%20Men" target="_blank" rel="noopener" class="wa-float" title="Chatea con nosotros en WhatsApp" aria-label="WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
-  /* ===== SCROLL REVEAL ===== */
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -1393,64 +640,53 @@
   }, { threshold: 0.08 });
   reveals.forEach(r => observer.observe(r));
 
-  /* ===== MODAL ===== */
   let currentService = '';
-
   function openModal(card) {
     const title  = card.getAttribute('data-title');
     const desc   = card.getAttribute('data-desc');
     const imgSrc = card.getAttribute('data-img');
     currentService = title;
-
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalDesc').textContent  = desc;
-
     const wrap = document.getElementById('modalImgWrap');
-    wrap.innerHTML = `
-      <img
-        src="${imgSrc}"
-        alt="${title} — Belanova For Men"
-        style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
-        onerror="this.parentElement.innerHTML='<div class=\'modal-img-placeholder\'><i class=\'fas fa-spa\'></i><p style=\'font-size:14px;color:var(--text-muted);margin-top:8px;\'>${title}</p></div>'"
-      />`;
-
+    wrap.innerHTML = `<img src="${imgSrc}" alt="${title} — Belanova For Men" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;" onerror="this.parentElement.innerHTML='<div class=\'modal-img-placeholder\'><i class=\'fas fa-spa\'></i><p style=\'font-size:14px;color:var(--text-muted);margin-top:8px;\'>${title}</p></div>'"/>`;
     document.getElementById('serviceModal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
   function closeModal() {
     document.getElementById('serviceModal').classList.remove('open');
     document.body.style.overflow = '';
   }
-
   function closeModalOnOverlay(e) {
     if (e.target === document.getElementById('serviceModal')) closeModal();
   }
-
   function bookFromModal() {
     const text = encodeURIComponent(`Hola, quiero agendar una cita en Belanova For Men.\nTratamiento de interés: ${currentService}`);
     window.open(`https://wa.me/51958061938?text=${text}`, '_blank');
   }
-
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  /* ===== FORM → WHATSAPP ===== */
   function sendFormWA() {
-    const name    = document.getElementById('cf-nombre').value  || 'Sin nombre';
-    const phone   = document.getElementById('cf-tel').value     || 'Sin teléfono';
-    const email   = document.getElementById('cf-email').value   || '';
-    const service = document.getElementById('cf-servicio').value || 'Sin especificar';
-    const msg     = document.getElementById('cf-msg').value     || '';
-    const text = encodeURIComponent(
-      `Hola, soy ${name}. Quiero agendar una cita en Belanova For Men.\nServicio: ${service}\nTel: ${phone}\nCorreo: ${email}\nMensaje: ${msg}`
-    );
-    window.open(`https://wa.me/958061938?text=${text}`, '_blank');
+    const name    = document.getElementById('cf-nombre').value.trim();
+    const phone   = document.getElementById('cf-tel').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const service = document.getElementById('cf-servicio').value;
+    const msg     = document.getElementById('cf-msg').value.trim();
+    if (!name) { Swal.fire({ icon: 'warning', title: 'Nombre requerido', text: 'Por favor, ingresa tu nombre completo.', confirmButtonColor: '#c9a96e', confirmButtonText: 'Entendido', background: '#fff' }); return; }
+    if (!phone) { Swal.fire({ icon: 'warning', title: 'Teléfono requerido', text: 'Necesitamos tu número para contactarte.', confirmButtonColor: '#c9a96e', confirmButtonText: 'Ok', background: '#fff' }); return; }
+    const phoneClean = phone.replace(/\D/g, '');
+    if (phoneClean.length < 9) { Swal.fire({ icon: 'error', title: 'Teléfono inválido', text: 'Ingresa al menos 9 dígitos (ej: 958061938)', confirmButtonColor: '#c9a96e', confirmButtonText: 'Corregir', background: '#fff' }); return; }
+    if (!service) { Swal.fire({ icon: 'info', title: 'Selecciona un servicio', text: 'Elige el tratamiento de tu interés para agendar tu cita.', confirmButtonColor: '#c9a96e', confirmButtonText: 'Entendido', background: '#fff' }); return; }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { Swal.fire({ icon: 'error', title: 'Correo inválido', text: 'Ejemplo: usuario@dominio.com', confirmButtonColor: '#c9a96e', confirmButtonText: 'Corregir', background: '#fff' }); return; }
+    Swal.fire({ icon: 'success', title: '¡Listo!', text: 'Serás redirigido a WhatsApp para completar tu cita.', confirmButtonColor: '#c9a96e', confirmButtonText: 'Continuar', background: '#fff', timer: 2000, showConfirmButton: true }).then(() => {
+      const text = encodeURIComponent(`Hola, soy ${name}. Quiero agendar una cita en Belanova For Men.\nServicio: ${service}\nTel: ${phone}\nCorreo: ${email}\nMensaje: ${msg}`);
+      window.open(`https://wa.me/51958061938?text=${text}`, '_blank');
+    });
   }
 
-  /* ===== NAV SHRINK ON SCROLL ===== */
   window.addEventListener('scroll', () => {
-    document.querySelector('nav').style.padding =
-      window.scrollY > 50 ? '10px 6%' : '14px 6%';
+    const nav = document.querySelector('nav');
+    if (nav) nav.style.padding = window.scrollY > 50 ? '10px 6%' : '14px 6%';
   });
 </script>
 </body>
