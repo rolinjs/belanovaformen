@@ -112,7 +112,7 @@
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
     .hamburger span { width:24px; height:2px; background:var(--white); border-radius:2px; transition:.3s; }
 
-    /* HERO - VERSIÓN CORREGIDA SIN DISTORSIÓN */
+    /* HERO - DISEÑO VARONIL CON FORMAS GEOMÉTRICAS */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -256,7 +256,7 @@
       transform: translateY(-2px);
     }
     
-    /* Contenedor de imagen - SIN DISTORSIÓN */
+    /* CONTENEDOR DE IMAGEN - DISEÑO VARONIL */
     .hero-image-container {
       flex: 1;
       max-width: 500px;
@@ -265,63 +265,192 @@
       animation: fadeInRight 1s .2s ease both;
     }
     
+    /* Marco principal con borde metálico */
     .hero-image-frame {
       position: relative;
-      border-radius: 24px;
+      border-radius: 16px;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--primary-light), var(--primary));
-      padding: 8px;
-      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, #2a2e45, #0e1124);
+      padding: 6px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
     .hero-image-frame:hover {
       transform: translateY(-5px);
-      box-shadow: 0 25px 40px -15px rgba(0,0,0,0.3);
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.5);
     }
     
-    /* CLAVE: object-fit CONTAIN para NO distorsionar la imagen */
+    /* Imagen - SIN DISTORSIÓN */
     .hero-main-img {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 18px;
+      border-radius: 12px;
       object-fit: contain;
       background: var(--white);
+      position: relative;
+      z-index: 2;
     }
     
-    /* Elementos decorativos alrededor de la imagen */
+    /* Esquinas metálicas (tornillos/remaches) */
+    .hero-image-frame .corner {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      z-index: 3;
+      pointer-events: none;
+    }
+    
+    .corner-tl {
+      top: 10px;
+      left: 10px;
+      border-top: 3px solid var(--gold);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px 0 0 0;
+    }
+    
+    .corner-tr {
+      top: 10px;
+      right: 10px;
+      border-top: 3px solid var(--gold);
+      border-right: 3px solid var(--gold);
+      border-radius: 0 4px 0 0;
+    }
+    
+    .corner-bl {
+      bottom: 10px;
+      left: 10px;
+      border-bottom: 3px solid var(--gold);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 0 0 4px;
+    }
+    
+    .corner-br {
+      bottom: 10px;
+      right: 10px;
+      border-bottom: 3px solid var(--gold);
+      border-right: 3px solid var(--gold);
+      border-radius: 0 0 4px 0;
+    }
+    
+    /* Elementos decorativos varoniles alrededor de la imagen */
+    .hero-image-container .gear-shape {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: rgba(201,169,110,0.15);
+      border: 2px dashed var(--gold);
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .gear-1 {
+      top: -20px;
+      right: -20px;
+      animation: rotateSlow 12s linear infinite;
+    }
+    
+    .gear-2 {
+      bottom: -25px;
+      left: -25px;
+      width: 70px;
+      height: 70px;
+      border-style: dotted;
+      animation: rotateSlow 8s linear infinite reverse;
+    }
+    
+    .gear-3 {
+      top: 40%;
+      right: -30px;
+      width: 35px;
+      height: 35px;
+      border: 2px solid var(--gold);
+      background: transparent;
+      animation: rotateSlow 10s linear infinite;
+    }
+    
+    /* Líneas geométricas (estilo masculino) */
+    .hero-image-container .line-shape {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      height: 2px;
+      width: 80px;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    
+    .line-1 {
+      top: -15px;
+      left: 20px;
+      width: 100px;
+    }
+    
+    .line-2 {
+      bottom: -15px;
+      right: 20px;
+      width: 120px;
+    }
+    
+    /* Triángulos (estilo industrial) */
+    .hero-image-container .triangle {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 35px solid rgba(201,169,110,0.2);
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .triangle-1 {
+      top: -10px;
+      left: 40%;
+      transform: rotate(180deg);
+    }
+    
+    .triangle-2 {
+      bottom: -15px;
+      right: 30%;
+    }
+    
+    /* Círculo metálico central decorativo detrás de la imagen */
     .hero-image-container::before {
       content: '';
       position: absolute;
-      top: -15px;
-      right: -15px;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, var(--gold-light), transparent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110%;
+      height: 110%;
+      background: radial-gradient(circle, rgba(201,169,110,0.08), transparent 70%);
       border-radius: 50%;
       z-index: -1;
-      opacity: 0.4;
-      animation: pulse 3s ease-in-out infinite;
+      pointer-events: none;
     }
     
-    .hero-image-container::after {
+    /* Sombra de neón dorada en hover */
+    .hero-image-frame::after {
       content: '';
       position: absolute;
-      bottom: -20px;
-      left: -20px;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, var(--secondary), transparent);
-      border-radius: 50%;
+      inset: -2px;
+      background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
+      border-radius: 18px;
       z-index: -1;
-      opacity: 0.5;
-      animation: pulse 4s ease-in-out infinite reverse;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
     
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.4; }
-      50% { transform: scale(1.1); opacity: 0.6; }
+    .hero-image-frame:hover::after {
+      opacity: 0.5;
+    }
+    
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     
     /* Stats bar */
@@ -364,7 +493,7 @@
       letter-spacing: 1px;
     }
     
-    /* Secciones generales */
+    /* Secciones generales (TODO IGUAL) */
     section { padding: 100px 6%; }
     .section-tag {
       display: inline-block; font-size: 11px; letter-spacing: 4px;
@@ -621,7 +750,9 @@
       }
       
       .hero-image-container::before,
-      .hero-image-container::after {
+      .gear-shape,
+      .line-shape,
+      .triangle {
         display: none;
       }
       
@@ -682,7 +813,7 @@
   <a href="#contacto"  onclick="this.closest('.mobile-nav').classList.remove('open')">Contacto</a>
 </div>
 
-<!-- HERO CON IMAGEN CORREGIDA -->
+<!-- HERO CON DISEÑO VARONIL -->
 <section class="hero" id="inicio">
   <div class="hero-content">
     <div class="hero-tag"><i class="fas fa-star"></i> Centro de Estética Premium</div>
@@ -697,8 +828,21 @@
   <div class="hero-image-container">
     <div class="hero-image-frame">
       <!-- CAMBIA "tu-imagen.jpg" por el nombre REAL de tu archivo -->
-      <img class="hero-main-img" src="img/IMG_6973.PNG" alt="Belanova For Men - Centro de Estética para Hombres en Piura" onerror="this.src='https://placehold.co/600x600/f1dac4/161b33?text=Belanova+For+Men'">
+      <img class="hero-main-img" src="img/111.png" alt="Belanova For Men - Centro de Estética para Hombres en Piura" onerror="this.src='https://placehold.co/600x600/f1dac4/161b33?text=Belanova+For+Men'">
+      <!-- Esquinas metálicas (remaches) -->
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
     </div>
+    <!-- Elementos decorativos varoniles -->
+    <div class="gear-shape gear-1"></div>
+    <div class="gear-shape gear-2"></div>
+    <div class="gear-shape gear-3"></div>
+    <div class="line-shape line-1"></div>
+    <div class="line-shape line-2"></div>
+    <div class="triangle triangle-1"></div>
+    <div class="triangle triangle-2"></div>
   </div>
   
   <div class="stats-bar">
@@ -772,7 +916,7 @@
   </div>
 </section>
 
-<!-- SERVICIOS CON TABS -->
+<!-- SERVICIOS CON TABS (TODO IGUAL) -->
 <section id="servicios">
   <div class="section-header reveal">
     <div class="section-tag">Nuestros Servicios</div>
@@ -1089,7 +1233,6 @@
 </a>
 
 <script>
-  // Burbujas flotantes
   function createBubbles() {
     const container = document.getElementById('bubbles-container');
     if (!container) return;
@@ -1107,7 +1250,6 @@
   }
   createBubbles();
 
-  // Scroll reveal
   const reveals  = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -1116,7 +1258,6 @@
   }, { threshold: 0.08 });
   reveals.forEach(r => observer.observe(r));
 
-  // Tabs
   function switchTab(panel, btn) {
     document.querySelectorAll('.srv-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.srv-panel').forEach(p => p.classList.remove('active'));
@@ -1124,7 +1265,6 @@
     document.getElementById('panel-' + panel).classList.add('active');
   }
 
-  // Modal
   let currentService = '';
   function openModal(card) {
     const title  = card.getAttribute('data-title');
@@ -1155,7 +1295,6 @@
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  // Formulario
   function sendFormWA() {
     const name    = document.getElementById('cf-nombre').value.trim();
     const phone   = document.getElementById('cf-tel').value.trim();
