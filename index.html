@@ -493,7 +493,7 @@
       letter-spacing: 1px;
     }
     
-    /* Secciones generales (TODO IGUAL) */
+    /* Secciones generales */
     section { padding: 100px 6%; }
     .section-tag {
       display: inline-block; font-size: 11px; letter-spacing: 4px;
@@ -633,6 +633,13 @@
       background: var(--primary); color: #fff; font-size: 10px;
       letter-spacing: 2px; padding: 4px 12px; border-radius: 20px;
       text-transform: uppercase; z-index: 1;
+    }
+
+    /* Certificaciones */
+    #certificaciones { 
+      background: linear-gradient(135deg, #161b33 0%, #0e1124 100%); 
+      position: relative; 
+      overflow: hidden; 
     }
 
     /* Ubicación */
@@ -827,7 +834,7 @@
   
   <div class="hero-image-container">
     <div class="hero-image-frame">
-      <!-- CAMBIA "tu-imagen.jpg" por el nombre REAL de tu archivo -->
+      <!-- CAMBIA "111.png" por el nombre REAL de tu archivo -->
       <img class="hero-main-img" src="img/111.png" alt="Belanova For Men - Centro de Estética para Hombres en Piura" onerror="this.src='https://placehold.co/600x600/f1dac4/161b33?text=Belanova+For+Men'">
       <!-- Esquinas metálicas (remaches) -->
       <div class="corner corner-tl"></div>
@@ -853,8 +860,194 @@
   </div>
 </section>
 
-<!-- Certificaciones -->
-<section id="certificaciones" style="padding: 60px 6%; background: linear-gradient(135deg, #161b33 0%, #0e1124 100%); position: relative; overflow: hidden;">
+<!-- SERVICIOS CON TABS -->
+<section id="servicios">
+  <div class="section-header reveal">
+    <div class="section-tag">Nuestros Servicios</div>
+    <h2 class="section-title">Tratamientos <strong>Especializados</strong></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Ofrecemos una amplia gama de tratamientos estéticos organizados por categoría, diseñados específicamente para las necesidades del hombre moderno.</p>
+  </div>
+
+  <div class="srv-tabs reveal">
+    <button class="srv-tab active" onclick="switchTab('micropigmentacion', this)"><i class="fas fa-pen-nib"></i> Micropigmentación</button>
+    <button class="srv-tab" onclick="switchTab('faciales', this)"><i class="fas fa-spa"></i> Faciales</button>
+    <button class="srv-tab" onclick="switchTab('corporales', this)"><i class="fas fa-dumbbell"></i> Corporales</button>
+    <button class="srv-tab" onclick="switchTab('especialidades', this)"><i class="fas fa-star"></i> Especialidades</button>
+  </div>
+
+  <!-- MICROPIGMENTACIÓN -->
+  <div class="srv-panel active" id="panel-micropigmentacion">
+    <div class="srv-subcategory reveal">
+      <div class="srv-subcat-header"><i class="fas fa-user-alt"></i> Capilar & Cejas</div>
+      <div class="services-grid">
+        <article class="service-card" data-title="Micropigmentación Capilar" data-desc="La micropigmentación capilar es un tratamiento estético no invasivo que consiste en aplicar microdepósitos de pigmento en el cuero cabelludo para simular la apariencia de folículos capilares. Resultado denso, natural y sin cirugía." onclick="openModal(this)">
+          <div class="service-num">01</div>
+          <div class="service-img-wrap">
+            <img src="img/micropigmentacion_capilar.webp" alt="Micropigmentación Capilar" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user-alt\'></i><span>Micropigmentación Capilar</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Micropigmentación Capilar</h3><p>Simula folículos capilares con micro puntos de pigmento. Resultado denso, natural y sin cirugía.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+        <article class="service-card" data-title="Micropigmentación de Cejas" data-desc="La micropigmentación de cejas es un tratamiento estético que define, corrige y rellena las cejas con pigmentos semipermanentes. Permite lograr un diseño natural y armonioso, resaltando la mirada. Ideal para quienes buscan cejas definidas sin necesidad de maquillaje diario." onclick="openModal(this)">
+          <div class="service-num">02</div>
+          <div class="service-img-wrap">
+            <img src="img/cejas.webp" alt="Micropigmentación de Cejas" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pen-nib\'></i><span>Micropigmentación de Cejas</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Micropigmentación de Cejas</h3><p>Define y rellena las cejas con pigmentos semipermanentes para un resultado natural y equilibrado.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+      </div>
+    </div>
+    <div class="srv-subcategory reveal">
+      <div class="srv-subcat-header"><i class="fas fa-kiss-wink-heart"></i> Labios</div>
+      <div class="services-grid">
+        <article class="service-card" data-title="Neutralización de Labios" data-desc="La neutralización de labios es un tratamiento estético que corrige tonos oscuros o desiguales mediante la aplicación de pigmentos especializados. Ayuda a unificar el color y realzar la apariencia natural de los labios, logrando un aspecto más uniforme, saludable y armonioso." onclick="openModal(this)">
+          <div class="service-num">01</div>
+          <div class="service-img-wrap">
+            <img src="img/labios.webp" alt="Neutralización de Labios" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-magic\'></i><span>Neutralización de Labios</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Neutralización de Labios</h3><p>Corrige tonos oscuros o desiguales con pigmentos especializados. Aspecto más uniforme y armonioso.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACIALES (ahora incluye Reducción de Papada) -->
+  <div class="srv-panel" id="panel-faciales">
+    <div class="srv-subcategory reveal">
+      <div class="srv-subcat-header"><i class="fas fa-spa"></i> Tratamientos Faciales</div>
+      <div class="services-grid">
+        <article class="service-card" data-title="Limpieza Facial" data-desc="La limpieza facial es un tratamiento que elimina impurezas, exceso de grasa y células muertas, ayudando a mantener la piel saludable. Mejora la textura, previene imperfecciones y aporta frescura al rostro. Ideal para todo tipo de piel, dejándola más limpia, suave y visiblemente luminosa." onclick="openModal(this)">
+          <div class="service-num">01</div>
+          <div class="service-img-wrap">
+            <img src="img/limpieza facial.webp" alt="Limpieza Facial" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pump-soap\'></i><span>Limpieza Facial</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Limpieza Facial</h3><p>Elimina impurezas, grasa y células muertas. Piel más limpia, suave y luminosa.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+        <article class="service-card" data-title="Rejuvenecimiento Facial" data-desc="El rejuvenecimiento facial es un tratamiento estético que mejora la apariencia de la piel, reduciendo líneas de expresión y signos de envejecimiento. Estimula la regeneración, aporta firmeza y devuelve luminosidad al rostro. Ideal para lograr una piel más joven, fresca y revitalizada." onclick="openModal(this)">
+          <div class="service-num">02</div>
+          <div class="service-img-wrap">
+            <img src="img/rf.webp" alt="Rejuvenecimiento Facial" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-spa\'></i><span>Rejuvenecimiento Facial</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Rejuvenecimiento Facial</h3><p>Reduce líneas de expresión y mejora la firmeza. Piel más joven y revitalizada.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+        <article class="service-card" data-title="Aclaramiento de Ojeras" data-desc="El aclaramiento de ojeras es un tratamiento estético que reduce la pigmentación oscura bajo los ojos, mejorando el tono y la luminosidad de la piel. Ayuda a lograr una mirada más fresca, descansada y rejuvenecida, devolviendo vitalidad al rostro." onclick="openModal(this)">
+          <div class="service-num">03</div>
+          <div class="service-img-wrap">
+            <img src="img/aclaramiento de ojeras.webp" alt="Aclaramiento de Ojeras" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-eye\'></i><span>Aclaramiento de Ojeras</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Aclaramiento de Ojeras</h3><p>Reduce la pigmentación oscura bajo los ojos. Mirada más fresca y descansada.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+        <!-- Reducción de Papada movida aquí -->
+        <article class="service-card" data-title="Reducción de Papada" data-desc="La reducción de papada es un tratamiento estético que ayuda a disminuir la grasa acumulada bajo el mentón, mejorando el contorno facial. Favorece una apariencia más definida y estilizada, aportando firmeza a la piel. Ideal para quienes buscan un perfil más armónico y rejuvenecido sin procedimientos invasivos." onclick="openModal(this)">
+          <div class="service-num">04</div>
+          <div class="service-img-wrap">
+            <img src="img/reduccion_papada.webp" alt="Reducción de Papada" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-smile\'></i><span>Reducción de Papada</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Reducción de Papada</h3><p>Define el contorno del mentón y perfil facial sin procedimientos invasivos.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPORALES -->
+  <div class="srv-panel" id="panel-corporales">
+    <div class="srv-subcategory reveal">
+      <div class="srv-subcat-header"><i class="fas fa-dumbbell"></i> Tratamientos Corporales</div>
+      <div class="services-grid">
+        <article class="service-card" data-title="Reducción de Medidas" data-desc="La reducción de medidas es un tratamiento estético enfocado en disminuir volumen corporal y moldear la figura. Ayuda a eliminar grasa localizada, mejorar la firmeza de la piel y estilizar zonas específicas. Ideal para complementar hábitos saludables, logrando un aspecto más definido y armonioso." onclick="openModal(this)">
+          <div class="service-num">01</div>
+          <div class="service-img-wrap">
+            <img src="img/reduccion_medidas.webp" alt="Reducción de Medidas" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-weight\'></i><span>Reducción de Medidas</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Reducción de Medidas</h3><p>Elimina grasa localizada y moldea la figura sin agujas ni cirugía.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+        <article class="service-card" data-title="Descarga Muscular" data-desc="La descarga muscular es un tratamiento terapéutico que ayuda a aliviar la tensión acumulada en los músculos, reduciendo molestias y fatiga. Mejora la circulación, favorece la recuperación física y brinda una sensación de relajación profunda. Ideal para personas con estrés, actividad física intensa o sobrecarga muscular." onclick="openModal(this)">
+          <div class="service-num">02</div>
+          <div class="service-img-wrap">
+            <img src="img/descarga muscular.webp" alt="Descarga Muscular" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-hand-peace\'></i><span>Descarga Muscular</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Descarga Muscular</h3><p>Alivia la tensión muscular, mejora la circulación y favorece la recuperación física.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESPECIALIDADES (ahora incluye Ondas de Choque) -->
+  <div class="srv-panel" id="panel-especialidades">
+    <div class="srv-subcategory reveal">
+      <div class="srv-subcat-header"><i class="fas fa-star"></i> Tratamientos Especializados</div>
+      <div class="services-grid">
+        <article class="service-card" data-title="Extracción de Acrocordones" data-desc="La extracción de acrocordones es un procedimiento estético que elimina pequeñas lesiones benignas de la piel de forma rápida y segura. Ayuda a mejorar la apariencia, dejando la piel más limpia y uniforme. Ideal para zonas donde estos crecimientos generan incomodidad o afectan la estética." onclick="openModal(this)">
+          <div class="service-num">01</div>
+          <div class="service-img-wrap">
+            <img src="img/l.webp" alt="Extracción de Acrocordones" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-cut\'></i><span>Extracción de Acrocordones</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Extracción de Acrocordones</h3><p>Elimina pequeñas lesiones benignas de forma rápida y segura. Piel más limpia y uniforme.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+        <!-- Nuevo tratamiento: Ondas de Choque -->
+        <article class="service-card" data-title="Ondas de Choque" data-desc="La terapia de ondas de choque es un tratamiento no invasivo que utiliza ondas acústicas para estimular la regeneración tisular, mejorar la circulación y aliviar dolores musculares y articulares. Ideal para recuperación deportiva, lesiones y tratamientos de rehabilitación." onclick="openModal(this)">
+          <div class="service-num">02</div>
+          <div class="service-img-wrap">
+            <!-- CAMBIA "ondas_de_choque.jpg" por el nombre REAL de tu archivo -->
+            <img src="img/image (3).webp" alt="Ondas de Choque" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-waveform\'></i><span>Ondas de Choque</span></div>'"/>
+          </div>
+          <div class="service-body"><h3>Ondas de Choque</h3><p>Tratamiento no invasivo para la disfunción eréctil que mejora la circulación, ayudando a recuperar la firmeza de forma progresiva y natural.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeModalOnOverlay(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+    <div class="modal-img-wrap" id="modalImgWrap">
+      <div class="service-img-placeholder" style="height:100%;"><i class="fas fa-spa"></i><span>Belanova For Men</span></div>
+    </div>
+    <div class="modal-content">
+      <span class="modal-tag">Tratamiento Especializado</span>
+      <h3 class="modal-title" id="modalTitle">Título</h3>
+      <p class="modal-desc"  id="modalDesc">Descripción</p>
+      <button class="modal-cta" onclick="bookFromModal()"><i class="fab fa-whatsapp"></i> Agendar este tratamiento</button>
+    </div>
+  </div>
+</div>
+
+<!-- PACIENTES / RESULTADOS -->
+<section id="pacientes">
+  <div class="section-header reveal">
+    <div class="section-tag">Casos de Éxito</div>
+    <h2 class="section-title">Resultados <strong>Reales</strong></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Testimonios visuales de nuestros clientes satisfechos. Resultados visibles desde la primera sesión.</p>
+  </div>
+  <div class="patients-grid">
+    <div class="patient-card reveal">
+      <img src="img/t1.webp" alt="Antes y después Tratamiento Facial" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Tratamiento Facial</small></div>
+      <div class="patient-badge">Antes / Después</div>
+    </div>
+    <div class="patient-card reveal">
+      <img src="img/reduccion_medidas.webp" alt="Antes y después Reducción de Medidas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Reducción de Medidas</small></div>
+      <div class="patient-badge">Antes / Después</div>
+    </div>
+    <div class="patient-card reveal">
+      <img src="img/labios.webp" alt="Antes y después Neutralización de Labios" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Neutralización de Labios</small></div>
+      <div class="patient-badge">Antes / Después</div>
+    </div>
+    <div class="patient-card reveal">
+      <img src="img/cejas.webp" alt="Antes y después Micropigmentación de Cejas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Micropigmentación de Cejas</small></div>
+      <div class="patient-badge">Antes / Después</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICACIONES -->
+<section id="certificaciones" style="padding: 60px 6%; position: relative; overflow: hidden;">
   <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:rgba(201,169,110,0.06);pointer-events:none;"></div>
   <div style="position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(241,218,196,0.05);pointer-events:none;"></div>
   <div class="reveal" style="text-align:center; margin-bottom: 44px;">
@@ -912,182 +1105,6 @@
     <div style="display:flex;align-items:center;gap:10px;">
       <i class="fas fa-globe" style="color:#c9a96e;font-size:18px;"></i>
       <span style="font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:1px;">Estándares Internacionales</span>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICIOS CON TABS (TODO IGUAL) -->
-<section id="servicios">
-  <div class="section-header reveal">
-    <div class="section-tag">Nuestros Servicios</div>
-    <h2 class="section-title">Tratamientos <strong>Especializados</strong></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Ofrecemos una amplia gama de tratamientos estéticos organizados por categoría, diseñados específicamente para las necesidades del hombre moderno.</p>
-  </div>
-
-  <div class="srv-tabs reveal">
-    <button class="srv-tab active" onclick="switchTab('micropigmentacion', this)"><i class="fas fa-pen-nib"></i> Micropigmentación</button>
-    <button class="srv-tab" onclick="switchTab('faciales', this)"><i class="fas fa-spa"></i> Faciales</button>
-    <button class="srv-tab" onclick="switchTab('corporales', this)"><i class="fas fa-dumbbell"></i> Corporales</button>
-    <button class="srv-tab" onclick="switchTab('especialidades', this)"><i class="fas fa-star"></i> Especialidades</button>
-  </div>
-
-  <!-- MICROPIGMENTACIÓN -->
-  <div class="srv-panel active" id="panel-micropigmentacion">
-    <div class="srv-subcategory reveal">
-      <div class="srv-subcat-header"><i class="fas fa-user-alt"></i> Capilar & Cejas</div>
-      <div class="services-grid">
-        <article class="service-card" data-title="Micropigmentación Capilar" data-desc="La micropigmentación capilar es un tratamiento estético no invasivo que consiste en aplicar microdepósitos de pigmento en el cuero cabelludo para simular la apariencia de folículos capilares. Resultado denso, natural y sin cirugía." onclick="openModal(this)">
-          <div class="service-num">01</div>
-          <div class="service-img-wrap">
-            <img src="img/micropigmentacion_capilar.webp" alt="Micropigmentación Capilar" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-user-alt\'></i><span>Micropigmentación Capilar</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Micropigmentación Capilar</h3><p>Simula folículos capilares con micro puntos de pigmento. Resultado denso, natural y sin cirugía.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-        <article class="service-card" data-title="Micropigmentación de Cejas" data-desc="La micropigmentación de cejas es un tratamiento estético que define, corrige y rellena las cejas con pigmentos semipermanentes. Permite lograr un diseño natural y armonioso, resaltando la mirada. Ideal para quienes buscan cejas definidas sin necesidad de maquillaje diario." onclick="openModal(this)">
-          <div class="service-num">02</div>
-          <div class="service-img-wrap">
-            <img src="img/cejas.webp" alt="Micropigmentación de Cejas" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pen-nib\'></i><span>Micropigmentación de Cejas</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Micropigmentación de Cejas</h3><p>Define y rellena las cejas con pigmentos semipermanentes para un resultado natural y equilibrado.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-      </div>
-    </div>
-    <div class="srv-subcategory reveal">
-      <div class="srv-subcat-header"><i class="fas fa-kiss-wink-heart"></i> Labios</div>
-      <div class="services-grid">
-        <article class="service-card" data-title="Neutralización de Labios" data-desc="La neutralización de labios es un tratamiento estético que corrige tonos oscuros o desiguales mediante la aplicación de pigmentos especializados. Ayuda a unificar el color y realzar la apariencia natural de los labios, logrando un aspecto más uniforme, saludable y armonioso." onclick="openModal(this)">
-          <div class="service-num">01</div>
-          <div class="service-img-wrap">
-            <img src="img/labios.webp" alt="Neutralización de Labios" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-magic\'></i><span>Neutralización de Labios</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Neutralización de Labios</h3><p>Corrige tonos oscuros o desiguales con pigmentos especializados. Aspecto más uniforme y armonioso.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-      </div>
-    </div>
-  </div>
-
-  <!-- FACIALES -->
-  <div class="srv-panel" id="panel-faciales">
-    <div class="srv-subcategory reveal">
-      <div class="srv-subcat-header"><i class="fas fa-spa"></i> Tratamientos Faciales</div>
-      <div class="services-grid">
-        <article class="service-card" data-title="Limpieza Facial" data-desc="La limpieza facial es un tratamiento que elimina impurezas, exceso de grasa y células muertas, ayudando a mantener la piel saludable. Mejora la textura, previene imperfecciones y aporta frescura al rostro. Ideal para todo tipo de piel, dejándola más limpia, suave y visiblemente luminosa." onclick="openModal(this)">
-          <div class="service-num">01</div>
-          <div class="service-img-wrap">
-            <img src="img/limpieza facial.webp" alt="Limpieza Facial" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-pump-soap\'></i><span>Limpieza Facial</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Limpieza Facial</h3><p>Elimina impurezas, grasa y células muertas. Piel más limpia, suave y luminosa.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-        <article class="service-card" data-title="Rejuvenecimiento Facial" data-desc="El rejuvenecimiento facial es un tratamiento estético que mejora la apariencia de la piel, reduciendo líneas de expresión y signos de envejecimiento. Estimula la regeneración, aporta firmeza y devuelve luminosidad al rostro. Ideal para lograr una piel más joven, fresca y revitalizada." onclick="openModal(this)">
-          <div class="service-num">02</div>
-          <div class="service-img-wrap">
-            <img src="img/rf.webp" alt="Rejuvenecimiento Facial" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-spa\'></i><span>Rejuvenecimiento Facial</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Rejuvenecimiento Facial</h3><p>Reduce líneas de expresión y mejora la firmeza. Piel más joven y revitalizada.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-        <article class="service-card" data-title="Aclaramiento de Ojeras" data-desc="El aclaramiento de ojeras es un tratamiento estético que reduce la pigmentación oscura bajo los ojos, mejorando el tono y la luminosidad de la piel. Ayuda a lograr una mirada más fresca, descansada y rejuvenecida, devolviendo vitalidad al rostro." onclick="openModal(this)">
-          <div class="service-num">03</div>
-          <div class="service-img-wrap">
-            <img src="img/aclaramiento de ojeras.webp" alt="Aclaramiento de Ojeras" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-eye\'></i><span>Aclaramiento de Ojeras</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Aclaramiento de Ojeras</h3><p>Reduce la pigmentación oscura bajo los ojos. Mirada más fresca y descansada.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-      </div>
-    </div>
-  </div>
-
-  <!-- CORPORALES -->
-  <div class="srv-panel" id="panel-corporales">
-    <div class="srv-subcategory reveal">
-      <div class="srv-subcat-header"><i class="fas fa-dumbbell"></i> Tratamientos Corporales</div>
-      <div class="services-grid">
-        <article class="service-card" data-title="Reducción de Medidas" data-desc="La reducción de medidas es un tratamiento estético enfocado en disminuir volumen corporal y moldear la figura. Ayuda a eliminar grasa localizada, mejorar la firmeza de la piel y estilizar zonas específicas. Ideal para complementar hábitos saludables, logrando un aspecto más definido y armonioso." onclick="openModal(this)">
-          <div class="service-num">01</div>
-          <div class="service-img-wrap">
-            <img src="img/reduccion_medidas.webp" alt="Reducción de Medidas" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-weight\'></i><span>Reducción de Medidas</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Reducción de Medidas</h3><p>Elimina grasa localizada y moldea la figura sin agujas ni cirugía.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-        <article class="service-card" data-title="Reducción de Papada" data-desc="La reducción de papada es un tratamiento estético que ayuda a disminuir la grasa acumulada bajo el mentón, mejorando el contorno facial. Favorece una apariencia más definida y estilizada, aportando firmeza a la piel. Ideal para quienes buscan un perfil más armónico y rejuvenecido sin procedimientos invasivos." onclick="openModal(this)">
-          <div class="service-num">02</div>
-          <div class="service-img-wrap">
-            <img src="img/reduccion_papada.webp" alt="Reducción de Papada" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-smile\'></i><span>Reducción de Papada</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Reducción de Papada</h3><p>Define el contorno del mentón y perfil facial sin procedimientos invasivos.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-        <article class="service-card" data-title="Descarga Muscular" data-desc="La descarga muscular es un tratamiento terapéutico que ayuda a aliviar la tensión acumulada en los músculos, reduciendo molestias y fatiga. Mejora la circulación, favorece la recuperación física y brinda una sensación de relajación profunda. Ideal para personas con estrés, actividad física intensa o sobrecarga muscular." onclick="openModal(this)">
-          <div class="service-num">03</div>
-          <div class="service-img-wrap">
-            <img src="img/descarga muscular.webp" alt="Descarga Muscular" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-hand-peace\'></i><span>Descarga Muscular</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Descarga Muscular</h3><p>Alivia la tensión muscular, mejora la circulación y favorece la recuperación física.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-      </div>
-    </div>
-  </div>
-
-  <!-- ESPECIALIDADES -->
-  <div class="srv-panel" id="panel-especialidades">
-    <div class="srv-subcategory reveal">
-      <div class="srv-subcat-header"><i class="fas fa-star"></i> Tratamientos Especializados</div>
-      <div class="services-grid">
-        <article class="service-card" data-title="Extracción de Acrocordones" data-desc="La extracción de acrocordones es un procedimiento estético que elimina pequeñas lesiones benignas de la piel de forma rápida y segura. Ayuda a mejorar la apariencia, dejando la piel más limpia y uniforme. Ideal para zonas donde estos crecimientos generan incomodidad o afectan la estética." onclick="openModal(this)">
-          <div class="service-num">01</div>
-          <div class="service-img-wrap">
-            <img src="img/l.webp" alt="Extracción de Acrocordones" onerror="this.parentElement.innerHTML='<div class=\'service-img-placeholder\'><i class=\'fas fa-cut\'></i><span>Extracción de Acrocordones</span></div>'"/>
-          </div>
-          <div class="service-body"><h3>Extracción de Acrocordones</h3><p>Elimina pequeñas lesiones benignas de forma rápida y segura. Piel más limpia y uniforme.</p><span class="service-more"><i class="fas fa-arrow-right"></i> Ver más</span></div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="closeModalOnOverlay(event)">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
-    <div class="modal-img-wrap" id="modalImgWrap">
-      <div class="service-img-placeholder" style="height:100%;"><i class="fas fa-spa"></i><span>Belanova For Men</span></div>
-    </div>
-    <div class="modal-content">
-      <span class="modal-tag">Tratamiento Especializado</span>
-      <h3 class="modal-title" id="modalTitle">Título</h3>
-      <p class="modal-desc"  id="modalDesc">Descripción</p>
-      <button class="modal-cta" onclick="bookFromModal()"><i class="fab fa-whatsapp"></i> Agendar este tratamiento</button>
-    </div>
-  </div>
-</div>
-
-<!-- PACIENTES / RESULTADOS -->
-<section id="pacientes">
-  <div class="section-header reveal">
-    <div class="section-tag">Casos de Éxito</div>
-    <h2 class="section-title">Resultados <strong>Reales</strong></h2>
-    <div class="divider"></div>
-    <p class="section-desc">Testimonios visuales de nuestros clientes satisfechos. Resultados visibles desde la primera sesión.</p>
-  </div>
-  <div class="patients-grid">
-    <div class="patient-card reveal">
-      <img src="img/t1.webp" alt="Antes y después Tratamiento Facial" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
-      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Tratamiento Facial</small></div>
-      <div class="patient-badge">Antes / Después</div>
-    </div>
-    <div class="patient-card reveal">
-      <img src="img/reduccion_medidas.webp" alt="Antes y después Reducción de Medidas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
-      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Reducción de Medidas</small></div>
-      <div class="patient-badge">Antes / Después</div>
-    </div>
-    <div class="patient-card reveal">
-      <img src="img/labios.webp" alt="Antes y después Neutralización de Labios" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
-      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Neutralización de Labios</small></div>
-      <div class="patient-badge">Antes / Después</div>
-    </div>
-    <div class="patient-card reveal">
-      <img src="img/cejas.webp" alt="Antes y después Micropigmentación de Cejas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
-      <div class="patient-placeholder" style="display:none;"><i class="fas fa-user"></i><span>Antes / Después</span><small>Micropigmentación de Cejas</small></div>
-      <div class="patient-badge">Antes / Después</div>
     </div>
   </div>
 </section>
@@ -1150,10 +1167,11 @@
           <option>Limpieza Facial</option>
           <option>Rejuvenecimiento Facial</option>
           <option>Aclaramiento de Ojeras</option>
-          <option>Reducción de Medidas</option>
           <option>Reducción de Papada</option>
+          <option>Reducción de Medidas</option>
           <option>Descarga Muscular</option>
           <option>Extracción de Acrocordones</option>
+          <option>Ondas de Choque</option>
         </select>
       </div>
       <div class="form-group"><label for="cf-msg">Mensaje (opcional)</label><textarea id="cf-msg" rows="4" placeholder="Cuéntanos sobre tus necesidades o consultas..."></textarea></div>
@@ -1206,9 +1224,10 @@
         <li><a href="#servicios">Micropigmentación Capilar</a></li>
         <li><a href="#servicios">Limpieza Facial</a></li>
         <li><a href="#servicios">Rejuvenecimiento Facial</a></li>
-        <li><a href="#servicios">Reducción de Medidas</a></li>
         <li><a href="#servicios">Reducción de Papada</a></li>
+        <li><a href="#servicios">Reducción de Medidas</a></li>
         <li><a href="#servicios">Descarga Muscular</a></li>
+        <li><a href="#servicios">Ondas de Choque</a></li>
       </ul>
     </div>
     <div class="footer-col">
